@@ -11,133 +11,111 @@
 :root{
   --pri:#1a237e;--pri2:#3949ab;--ok:#2e7d32;--err:#c62828;
   --bg:#f0f2f5;--card:#fff;--txt:#222;--txt2:#666;
-  --bdr:#e0e0e0;--rad:14px;--field:#bf360c
+  --bdr:#e0e0e0;--rad:12px
 }
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-family:'Times New Roman',Times,serif;
   background:var(--bg);color:var(--txt);min-height:100vh;padding-bottom:30px
 }
 
-/* ---- SETUP OVERLAY ---- */
+/* SETUP */
 #setupOverlay{
   position:fixed;inset:0;background:linear-gradient(135deg,#1a237e,#3949ab);
   z-index:999;display:flex;align-items:center;justify-content:center;padding:20px
 }
 .setup-box{
-  background:#fff;border-radius:20px;padding:28px 22px;
-  width:100%;max-width:440px;box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  background:#fff;border-radius:16px;padding:24px 20px;
+  width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,0.3);
   max-height:90vh;overflow-y:auto
 }
-.setup-logo{font-size:48px;text-align:center;margin-bottom:8px}
-.setup-title{font-size:20px;font-weight:700;color:#1a237e;text-align:center;margin-bottom:4px}
-.setup-sub{font-size:12px;color:#666;text-align:center;margin-bottom:20px;line-height:1.5}
+.setup-logo{font-size:40px;text-align:center;margin-bottom:6px}
+.setup-title{font-size:18px;font-weight:700;color:#1a237e;text-align:center;margin-bottom:4px}
+.setup-sub{font-size:12px;color:#666;text-align:center;margin-bottom:16px}
 .setup-step{
-  background:#e8eaf6;border-radius:10px;padding:12px;
+  background:#f5f5f5;border-radius:8px;padding:12px;
   margin-bottom:12px;font-size:12px;line-height:1.6;color:#333
 }
 .setup-step strong{color:#1a237e;display:block;margin-bottom:4px}
 .setup-label{font-size:12px;font-weight:600;color:#555;margin-bottom:6px;display:block}
 .setup-input{
-  width:100%;padding:12px 14px;border:2px solid #c5cae9;border-radius:10px;
+  width:100%;padding:11px 12px;border:2px solid #c5cae9;border-radius:8px;
   font-size:13px;color:#333;font-family:inherit;margin-bottom:6px
 }
 .setup-input:focus{outline:none;border-color:#1a237e}
-.setup-hint{font-size:11px;color:#888;margin-bottom:16px;line-height:1.5}
+.setup-hint{font-size:11px;color:#888;margin-bottom:14px}
 .setup-btn{
-  width:100%;padding:14px;background:linear-gradient(135deg,#1a237e,#3949ab);
-  color:#fff;border:none;border-radius:10px;font-size:15px;
+  width:100%;padding:13px;background:linear-gradient(135deg,#1a237e,#3949ab);
+  color:#fff;border:none;border-radius:8px;font-size:14px;
   font-weight:700;cursor:pointer;font-family:inherit
 }
 .setup-saved{
-  background:#e8f5e9;border:1px solid #a5d6a7;border-radius:10px;
-  padding:10px 14px;font-size:12px;color:#2e7d32;
-  margin-bottom:12px;display:none;align-items:center;gap:8px
+  background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;
+  padding:10px;font-size:12px;color:#2e7d32;margin-bottom:12px;display:none
 }
 
-/* ---- HEADER ---- */
+/* HEADER */
 .hdr{
   background:linear-gradient(135deg,var(--pri),var(--pri2));
-  color:#fff;padding:14px 16px;position:sticky;top:0;z-index:100;
-  box-shadow:0 2px 16px rgba(0,0,0,0.2)
+  color:#fff;padding:12px 16px;position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,0.2)
 }
 .hdr-top{display:flex;align-items:center;justify-content:space-between}
-.hdr h1{font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px}
-.hdr-date{font-size:11px;opacity:.8;margin-top:3px}
-.hdr-right{text-align:right}
+.hdr h1{font-size:16px;font-weight:700}
+.hdr-date{font-size:11px;opacity:.8;margin-top:2px}
 .settings-btn{
   background:rgba(255,255,255,.2);border:none;color:#fff;
-  padding:6px 10px;border-radius:8px;font-size:11px;cursor:pointer;font-family:inherit
+  padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;font-family:inherit
 }
-.sts-bar{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
-.sts-dot{display:flex;align-items:center;gap:5px;font-size:10px;opacity:.9}
-.dot{width:8px;height:8px;border-radius:50%;background:#aaa;flex-shrink:0}
+.sts-bar{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
+.sts-dot{display:flex;align-items:center;gap:4px;font-size:10px;opacity:.9}
+.dot{width:7px;height:7px;border-radius:50%;background:#aaa;flex-shrink:0}
 .dot.on{background:#4caf50}.dot.off{background:#f44336}
 .dot.ld{background:#ffb300;animation:pls 1s infinite}
 @keyframes pls{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ---- MIC BANNER ---- */
+/* MIC BANNER */
 .mic-ban{
-  display:none;align-items:center;padding:10px 16px;
+  display:none;align-items:center;padding:8px 16px;
   background:#fff3e0;border-bottom:2px solid #ffb74d;
   font-size:12px;color:#333;line-height:1.5;flex-wrap:wrap;gap:6px
 }
 .mic-ban.ok{background:#e8f5e9;border-color:#a5d6a7;color:#2e7d32}
 .mic-ban.er{background:#ffebee;border-color:#ef9a9a;color:#c62828}
-.mic-lnk{
-  color:#1a237e;text-decoration:underline;cursor:pointer;
-  font-weight:700;background:rgba(26,35,126,.08);
-  padding:2px 8px;border-radius:4px
-}
+.mic-lnk{color:#1a237e;text-decoration:underline;cursor:pointer;font-weight:700}
 
-/* ---- TABS ---- */
+/* TABS */
 .tabs{
   display:flex;background:#fff;border-bottom:2px solid var(--bdr);
-  position:sticky;top:94px;z-index:99;
+  position:sticky;top:78px;z-index:99;
   box-shadow:0 2px 8px rgba(0,0,0,.06)
 }
 .tab{
   flex:1;padding:8px 2px;text-align:center;font-size:10px;
   font-weight:600;color:var(--txt2);border:none;background:none;
-  cursor:pointer;border-bottom:3px solid transparent;transition:.2s
+  cursor:pointer;border-bottom:3px solid transparent;transition:.2s;font-family:inherit
 }
 .tab.act{color:var(--pri);border-bottom-color:var(--pri);background:rgba(26,35,126,.04)}
-.tab-ic{font-size:20px;display:block;margin-bottom:2px}
+.tab-ic{font-size:18px;display:block;margin-bottom:1px}
 
-/* ---- PANELS ---- */
-.cnt{padding:14px;max-width:600px;margin:0 auto}
+/* PANELS */
+.cnt{padding:12px;max-width:600px;margin:0 auto}
 .pnl{display:none}.pnl.act{display:block}
 
-/* ---- CARDS ---- */
+/* CARDS */
 .crd{
   background:var(--card);border-radius:var(--rad);
-  padding:16px;margin-bottom:12px;
-  box-shadow:0 2px 12px rgba(0,0,0,.08);border:1px solid var(--bdr)
+  padding:14px;margin-bottom:10px;
+  box-shadow:0 1px 8px rgba(0,0,0,.06);border:1px solid var(--bdr)
 }
-.crd-t{
-  font-size:14px;font-weight:700;color:var(--pri);
-  margin-bottom:12px;display:flex;align-items:center;gap:8px
-}
+.crd-t{font-size:14px;font-weight:700;color:var(--pri);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 
-/* ---- STEPS ---- */
-.steps{display:flex;justify-content:center;align-items:center;gap:4px;margin:8px 0 14px}
-.step{display:flex;align-items:center;gap:4px;font-size:10px;color:#aaa;font-weight:600}
-.step.cur{color:var(--pri)}.step.done{color:var(--ok)}
-.snum{
-  width:22px;height:22px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:10px;background:#eee;color:#aaa;font-weight:700
-}
-.step.cur .snum{background:var(--pri);color:#fff}
-.step.done .snum{background:var(--ok);color:#fff}
-.sarr{color:#ddd;font-size:16px;margin:0 2px}
-
-/* ---- VOICE BUTTON ---- */
-.vc-sec{text-align:center;padding:16px 0 10px}
+/* VOICE BTN */
+.vc-sec{text-align:center;padding:14px 0 8px}
 .vc-btn{
-  width:76px;height:76px;border-radius:50%;border:none;
+  width:70px;height:70px;border-radius:50%;border:none;
   background:linear-gradient(135deg,var(--pri),var(--pri2));
-  color:#fff;font-size:30px;cursor:pointer;
-  box-shadow:0 4px 24px rgba(26,35,126,.35);transition:all .3s
+  color:#fff;font-size:28px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(26,35,126,.3);transition:all .3s
 }
 .vc-btn:active{transform:scale(.93)}
 .vc-btn.rec{
@@ -146,265 +124,221 @@ body{
   animation:rpls 1.5s infinite
 }
 @keyframes rpls{
-  0%{box-shadow:0 4px 24px rgba(198,40,40,.35)}
-  50%{box-shadow:0 6px 40px rgba(198,40,40,.65)}
-  100%{box-shadow:0 4px 24px rgba(198,40,40,.35)}
+  0%{box-shadow:0 4px 20px rgba(198,40,40,.3)}
+  50%{box-shadow:0 6px 36px rgba(198,40,40,.6)}
+  100%{box-shadow:0 4px 20px rgba(198,40,40,.3)}
 }
-.vc-lbl{font-size:11px;color:var(--txt2);margin-top:8px;min-height:16px}
+.vc-lbl{font-size:11px;color:var(--txt2);margin-top:6px;min-height:14px}
 
-/* ---- TRANSCRIPT BOX ---- */
+/* TRANSCRIPT */
 .trn{
   background:#f9f9f9;border:2px dashed #d0d0d0;
-  border-radius:10px;padding:12px;min-height:72px;
-  font-size:14px;line-height:1.65;color:var(--txt);
-  margin:10px 0;transition:border .3s;outline:none;
-  white-space:pre-wrap;cursor:text
+  border-radius:8px;padding:10px;min-height:60px;
+  font-size:14px;line-height:1.6;color:var(--txt);
+  margin:8px 0;transition:border .3s;outline:none;
+  white-space:pre-wrap;cursor:text;font-family:'Times New Roman',Times,serif
 }
 .trn.live{border-color:var(--pri);border-style:solid;background:#f3f4ff}
 .trn:empty::before{
-  content:'🎙️ Voice input appears here...\A You can also type directly.';
+  content:'Voice input appears here...\AYou can also type directly.';
   white-space:pre;color:#bbb;font-style:italic;font-size:13px
 }
 
-/* ---- GRAMMAR PREVIEW ---- */
+/* EDITABLE PREVIEW */
+.edit-prev{
+  background:#fffde7;border:1.5px solid #fff176;
+  border-radius:8px;padding:10px;margin-top:8px;display:none
+}
+.edit-prev.sh{display:block}
+.edit-prev-lbl{font-size:11px;font-weight:700;color:#f57f17;margin-bottom:6px;text-transform:uppercase}
+.edit-prev-body{
+  background:#fff;border:1px solid #fff9c4;border-radius:6px;
+  padding:10px;min-height:50px;font-size:13px;line-height:1.6;
+  outline:none;white-space:pre-wrap;cursor:text;color:#333;
+  font-family:'Times New Roman',Times,serif
+}
+
+/* GRAMMAR PREVIEW */
 .gprev{
   background:#f1f8e9;border:1.5px solid #aed581;
-  border-radius:10px;padding:14px;margin-top:10px;display:none
+  border-radius:8px;padding:12px;margin-top:8px;display:none
 }
 .gprev.sh{display:block}
-.gprev-lbl{
-  font-size:11px;font-weight:700;color:#558b2f;
-  text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;
-  display:flex;align-items:center;gap:6px
-}
+.gprev-lbl{font-size:11px;font-weight:700;color:#558b2f;text-transform:uppercase;margin-bottom:6px}
 .gprev-edit{
-  background:#fff;border:1.5px solid #c5e1a5;border-radius:8px;
-  padding:10px 12px;min-height:70px;font-size:13px;
-  line-height:1.7;outline:none;white-space:pre-wrap;cursor:text;
-  color:#333
+  background:#fff;border:1px solid #c5e1a5;border-radius:6px;
+  padding:10px;min-height:50px;font-size:13px;line-height:1.6;
+  outline:none;white-space:pre-wrap;cursor:text;color:#333;
+  font-family:'Times New Roman',Times,serif
 }
-.gprev-note{
-  font-size:10px;color:#689f38;margin-top:6px;
-  font-style:italic;display:flex;align-items:center;gap:4px
-}
+.gprev-note{font-size:10px;color:#689f38;margin-top:4px;font-style:italic}
 
-/* ---- PREVIEW BOX ---- */
-.pvbox{
-  background:#e8f5e9;border:1.5px solid #a5d6a7;
-  border-radius:10px;padding:12px;margin-top:10px;
-  font-size:12px;line-height:1.7;display:none
-}
-.pvbox.sh{display:block}
-.pvbox-lbl{font-size:11px;font-weight:700;color:var(--ok);margin-bottom:8px;text-transform:uppercase}
-
-/* ---- FORM FIELDS ---- */
-.fg{margin-bottom:10px}
-.fl{font-size:11px;font-weight:600;color:#777;margin-bottom:4px;display:block;text-transform:uppercase;letter-spacing:.4px}
+/* FORM */
+.fg{margin-bottom:8px}
+.fl{font-size:11px;font-weight:600;color:#777;margin-bottom:3px;display:block;text-transform:uppercase;letter-spacing:.3px}
 .fi{
-  width:100%;padding:10px 12px;border:1.5px solid var(--bdr);
-  border-radius:8px;font-size:14px;color:var(--txt);
-  background:#fff;transition:.2s;font-family:inherit
+  width:100%;padding:9px 10px;border:1.5px solid var(--bdr);
+  border-radius:6px;font-size:13px;color:var(--txt);
+  background:#fff;transition:.2s;font-family:'Times New Roman',Times,serif
 }
 .fi:focus{outline:none;border-color:var(--pri)}
-textarea.fi{min-height:90px;resize:vertical}
-select.fi{appearance:auto}
+textarea.fi{min-height:80px;resize:vertical}
 
-/* ---- BUTTONS ---- */
+/* BUTTONS */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  gap:6px;padding:12px 20px;border:none;border-radius:10px;
-  font-size:14px;font-weight:600;cursor:pointer;
+  gap:5px;padding:10px 16px;border:none;border-radius:8px;
+  font-size:13px;font-weight:600;cursor:pointer;
   transition:all .2s;font-family:inherit;width:100%
 }
-.btn-p{
-  background:linear-gradient(135deg,var(--pri),var(--pri2));
-  color:#fff;box-shadow:0 3px 12px rgba(26,35,126,.3)
-}
-.btn-p:hover{box-shadow:0 4px 20px rgba(26,35,126,.4)}
+.btn-p{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;box-shadow:0 2px 10px rgba(26,35,126,.25)}
 .btn-p:disabled{opacity:.5;cursor:not-allowed}
 .btn-s{background:#fff;color:var(--pri);border:2px solid var(--pri)}
-.btn-o{background:#e65100;color:#fff;box-shadow:0 3px 12px rgba(230,81,0,.3)}
-.btn-f{background:linear-gradient(135deg,#bf360c,#e64a19);color:#fff;box-shadow:0 3px 12px rgba(191,54,12,.3)}
-.btn-sm{padding:8px 14px;font-size:12px;width:auto}
-.btn-row{display:flex;gap:8px;margin-top:12px}
+.btn-o{background:#e65100;color:#fff}
+.btn-f{background:linear-gradient(135deg,#bf360c,#e64a19);color:#fff}
+.btn-sm{padding:7px 12px;font-size:11px;width:auto}
+.btn-row{display:flex;gap:6px;margin-top:10px}
 
-/* ---- QUICK ACTIONS ---- */
-.qa{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+/* QUICK ACTIONS */
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:8px 0}
 .qa-b{
-  padding:8px 6px;background:#e8eaf6;border:none;border-radius:8px;
-  font-size:11px;color:#1a237e;cursor:pointer;
-  font-weight:500;font-family:inherit;transition:.15s;text-align:center
+  padding:7px 5px;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:6px;
+  font-size:11px;color:#333;cursor:pointer;font-weight:500;font-family:inherit;text-align:center
 }
-.qa-b:active{background:#c5cae9}
+.qa-b:active{background:#e0e0e0}
 
-/* ---- FORMAT OPTIONS ---- */
-.fmt-opts{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+/* FORMAT OPTIONS */
+.fmt-opts{display:flex;gap:5px;margin:6px 0;flex-wrap:wrap}
 .fmt-btn{
-  padding:6px 12px;border:2px solid #c5cae9;border-radius:8px;
+  padding:5px 10px;border:1.5px solid #d0d0d0;border-radius:6px;
   background:#fff;font-size:11px;cursor:pointer;font-weight:600;
-  color:#555;font-family:inherit;transition:.2s
+  color:#555;font-family:inherit
 }
 .fmt-btn.sel{border-color:var(--pri);background:#e8eaf6;color:var(--pri)}
 
-/* ---- HIGHLIGHT TAGS ---- */
-.hl-sec{margin:8px 0}
-.hl-input{display:flex;gap:6px;align-items:center}
+/* HIGHLIGHTS */
+.hl-sec{margin:6px 0}
+.hl-input{display:flex;gap:5px;align-items:center}
 .hl-input input{flex:1}
-.hl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.hl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .hl-tag{
-  padding:3px 10px;background:#fff9c4;border:1px solid #ffd54f;
-  border-radius:6px;font-size:11px;display:flex;align-items:center;gap:4px
+  padding:2px 8px;background:#fff9c4;border:1px solid #ffd54f;
+  border-radius:4px;font-size:11px;display:flex;align-items:center;gap:3px
 }
 .hl-tag .hl-x{cursor:pointer;font-weight:700;color:#f57f17}
 
-/* ---- CONTACTS CHIPS ---- */
-.ct-sec{margin:10px 0}
-.ct-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+/* CONTACTS */
+.ct-sec{margin:8px 0}
+.ct-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .ct-chip{
-  padding:5px 10px;background:#e3f2fd;border:1px solid #90caf9;
-  border-radius:8px;font-size:11px;cursor:pointer;transition:.15s;
-  display:flex;align-items:center;gap:4px
+  padding:4px 8px;background:#f5f5f5;border:1px solid #d0d0d0;
+  border-radius:6px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:3px
 }
 .ct-chip.sel{background:#1a237e;color:#fff;border-color:#1a237e}
-.ct-chip:active{transform:scale(.95)}
-.ct-manage{font-size:11px;color:var(--pri);cursor:pointer;text-decoration:underline;margin-top:6px;display:inline-block}
-
-/* ---- CONTACT MANAGER ---- */
-.ct-mgr{display:none;margin-top:10px;padding:12px;background:#f5f5f5;border-radius:10px}
+.ct-manage{font-size:11px;color:var(--pri);cursor:pointer;text-decoration:underline;margin-top:4px;display:inline-block}
+.ct-mgr{display:none;margin-top:8px;padding:10px;background:#f5f5f5;border-radius:8px}
 .ct-mgr.sh{display:block}
-.ct-mgr-row{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
-.ct-mgr-row input{flex:1;min-width:80px}
-.ct-list{margin-top:8px}
+.ct-mgr-row{display:flex;gap:5px;margin-bottom:6px;flex-wrap:wrap}
+.ct-mgr-row input{flex:1;min-width:70px}
 .ct-item{
   display:flex;justify-content:space-between;align-items:center;
-  padding:6px 10px;background:#fff;border-radius:8px;
-  margin-bottom:4px;font-size:12px;border:1px solid #e0e0e0
+  padding:5px 8px;background:#fff;border-radius:6px;margin-bottom:3px;font-size:11px;border:1px solid #e0e0e0
 }
-.ct-del{
-  color:#c62828;cursor:pointer;font-weight:700;
-  padding:2px 8px;border-radius:4px;font-size:14px
-}
+.ct-del{color:#c62828;cursor:pointer;font-weight:700;padding:2px 6px;font-size:13px}
 
-/* ---- MANUAL TOGGLE ---- */
-.mtg{
-  font-size:12px;color:var(--pri);cursor:pointer;
-  text-align:center;padding:6px;text-decoration:underline;opacity:.8
-}
-.mfm{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--bdr)}
+/* TOGGLE */
+.mtg{font-size:11px;color:var(--pri);cursor:pointer;text-align:center;padding:4px;text-decoration:underline}
+.mfm{display:none;margin-top:8px;padding-top:8px;border-top:1px dashed var(--bdr)}
 .mfm.sh{display:block}
 
-/* ---- NOTE TYPE SELECTOR ---- */
-.nt-opts{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+/* NOTE TYPE */
+.nt-opts{display:flex;gap:5px;margin:6px 0;flex-wrap:wrap}
 .nt-btn{
-  padding:8px 12px;border:2px solid #d7ccc8;border-radius:8px;
+  padding:6px 10px;border:1.5px solid #d0d0d0;border-radius:6px;
   background:#fff;font-size:11px;cursor:pointer;font-weight:600;
-  color:#5d4037;font-family:inherit;transition:.2s;text-align:center
+  color:#555;font-family:inherit
 }
 .nt-btn.sel{border-color:#bf360c;background:#fbe9e7;color:#bf360c}
 
-/* ---- TOAST ---- */
+/* TOAST */
 .tst-c{
-  position:fixed;top:14px;right:14px;left:14px;
-  z-index:1000;display:flex;flex-direction:column;gap:6px;pointer-events:none
+  position:fixed;top:10px;right:10px;left:10px;
+  z-index:1000;display:flex;flex-direction:column;gap:5px;pointer-events:none
 }
 .tst{
-  background:#fff;border-radius:12px;padding:12px 14px;
-  box-shadow:0 6px 24px rgba(0,0,0,.15);
-  display:flex;align-items:flex-start;gap:10px;
+  background:#fff;border-radius:10px;padding:10px 12px;
+  box-shadow:0 4px 20px rgba(0,0,0,.12);
+  display:flex;align-items:flex-start;gap:8px;
   animation:tstin .3s ease;pointer-events:auto;
   border-left:4px solid var(--pri)
 }
 .tst.ok{border-left-color:var(--ok)}
 .tst.er{border-left-color:var(--err)}
 .tst.in{border-left-color:#0288d1}
-.tst-ic{font-size:20px;flex-shrink:0;margin-top:1px}
-.tst-tt{font-size:13px;font-weight:700}
-.tst-mg{font-size:11px;color:#666;margin-top:2px;line-height:1.4}
-@keyframes tstin{from{transform:translateY(-16px);opacity:0}to{transform:translateY(0);opacity:1}}
+.tst-ic{font-size:18px;flex-shrink:0}
+.tst-tt{font-size:12px;font-weight:700}
+.tst-mg{font-size:11px;color:#666;margin-top:1px;line-height:1.4}
+@keyframes tstin{from{transform:translateY(-14px);opacity:0}to{transform:translateY(0);opacity:1}}
 
-/* ---- DATA TABLE ---- */
-.dtb{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px}
-.dtb th{background:var(--pri);color:#fff;padding:8px;text-align:left;font-size:10px;text-transform:uppercase}
-.dtb td{padding:7px 8px;border-bottom:1px solid #f0f0f0;vertical-align:top}
+/* TABLE */
+.dtb{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px}
+.dtb th{background:#333;color:#fff;padding:6px;text-align:left;font-size:10px}
+.dtb td{padding:6px;border-bottom:1px solid #eee;vertical-align:top}
 .dtb tr:nth-child(even) td{background:#fafafa}
 
-/* ---- EVENT ITEM ---- */
-.ev-i{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #f5f5f5}
+/* EVENT */
+.ev-i{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #f5f5f5}
 .ev-i:last-child{border-bottom:none}
-.ev-tm{font-size:10px;font-weight:700;color:var(--pri);min-width:60px;padding-top:2px}
-.ev-info .ev-tt{font-size:13px;font-weight:600}
-.ev-info .ev-gs{font-size:10px;color:var(--txt2);margin-top:2px}
+.ev-tm{font-size:10px;font-weight:700;color:var(--pri);min-width:55px}
+.ev-tt{font-size:12px;font-weight:600}
+.ev-gs{font-size:10px;color:var(--txt2);margin-top:1px}
 
-/* ---- LOADING / EMPTY ---- */
-.spn{display:inline-block;width:16px;height:16px;border:2.5px solid rgba(255,255,255,.35);border-radius:50%;border-top-color:#fff;animation:sp .7s linear infinite;vertical-align:middle}
+/* LOADING */
+.spn{display:inline-block;width:14px;height:14px;border:2.5px solid rgba(255,255,255,.35);border-radius:50%;border-top-color:#fff;animation:sp .7s linear infinite;vertical-align:middle}
 .spn-d{border-color:rgba(0,0,0,.1);border-top-color:var(--pri)}
 @keyframes sp{to{transform:rotate(360deg)}}
-.emp{text-align:center;padding:24px 16px;color:var(--txt2)}
-.emp-ic{font-size:36px;margin-bottom:8px}
-.emp-tx{font-size:13px}
+.emp{text-align:center;padding:20px 14px;color:var(--txt2)}
+.emp-ic{font-size:30px;margin-bottom:6px}
+.emp-tx{font-size:12px}
 
-@media(max-width:380px){
-  .cnt{padding:10px}
-  .crd{padding:12px}
-  .hdr h1{font-size:15px}
-  .tab{font-size:9px}
-  .tab-ic{font-size:18px}
-}
+@media(max-width:380px){.cnt{padding:8px}.crd{padding:10px}.hdr h1{font-size:14px}}
 </style>
 </head>
 <body>
 
-<!-- ============ SETUP OVERLAY ============ -->
+<!-- SETUP -->
 <div id="setupOverlay">
   <div class="setup-box">
     <div class="setup-logo">⚡</div>
     <div class="setup-title">Work Automation</div>
-    <div class="setup-sub">Connect your Google Apps Script to get started</div>
-
-    <div class="setup-saved" id="savedMsg">
-      ✅ URL already saved! Loading your dashboard...
-    </div>
-
+    <div class="setup-sub">Connect your Google Apps Script</div>
+    <div class="setup-saved" id="savedMsg">URL already saved. Loading dashboard...</div>
     <div class="setup-step">
-      <strong>📋 How to get your Apps Script URL:</strong>
+      <strong>How to get your Apps Script URL:</strong>
       1. Open script.google.com<br>
-      2. Open your project → Click "Deploy"<br>
-      3. Click "Manage deployments"<br>
-      4. Copy the Web App URL shown there
+      2. Open your project, click Deploy<br>
+      3. Manage deployments, copy Web App URL
     </div>
-
-    <label class="setup-label">Paste your Apps Script URL below:</label>
-    <input
-      type="url"
-      class="setup-input"
-      id="gasUrlInput"
+    <label class="setup-label">Paste your Apps Script URL:</label>
+    <input type="url" class="setup-input" id="gasUrlInput"
       placeholder="https://script.google.com/macros/s/.../exec"
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="false"
-    >
-    <div class="setup-hint">
-      ℹ️ This URL is saved on your device only. Nobody else can see it.
-    </div>
-
-    <button class="setup-btn" onclick="saveSetup()">✅ Save & Open Dashboard</button>
+      autocomplete="off" spellcheck="false">
+    <div class="setup-hint">Saved on your device only.</div>
+    <button class="setup-btn" onclick="saveSetup()">Save and Open Dashboard</button>
   </div>
 </div>
 
-<!-- ============ MIC BANNER ============ -->
-<div class="mic-ban" id="micBanner">
-  🎙️ Checking microphone...
-</div>
+<!-- MIC BANNER -->
+<div class="mic-ban" id="micBanner"></div>
 
-<!-- ============ HEADER ============ -->
+<!-- HEADER -->
 <div class="hdr">
   <div class="hdr-top">
     <div>
-      <h1>⚡ Work Automation</h1>
+      <h1>Work Automation</h1>
       <div class="hdr-date" id="hdrDate"></div>
     </div>
-    <button class="settings-btn" onclick="openSettings()">⚙️ Settings</button>
+    <button class="settings-btn" onclick="openSettings()">Settings</button>
   </div>
   <div class="sts-bar">
     <div class="sts-dot"><span class="dot ld" id="dCal"></span> Calendar</div>
@@ -414,340 +348,219 @@ select.fi{appearance:auto}
   </div>
 </div>
 
-<!-- ============ TABS ============ -->
+<!-- TABS -->
 <div class="tabs">
-  <button class="tab act" onclick="swTab('cal',this)">
-    <span class="tab-ic">📅</span>Calendar
-  </button>
-  <button class="tab" onclick="swTab('doc',this)">
-    <span class="tab-ic">📝</span>Daily Doc
-  </button>
-  <button class="tab" onclick="swTab('trk',this)">
-    <span class="tab-ic">📊</span>Tracker
-  </button>
-  <button class="tab" onclick="swTab('fld',this)">
-    <span class="tab-ic">🏗️</span>Field Notes
-  </button>
+  <button class="tab act" onclick="swTab('cal',this)"><span class="tab-ic">📅</span>Calendar</button>
+  <button class="tab" onclick="swTab('doc',this)"><span class="tab-ic">📝</span>Daily Doc</button>
+  <button class="tab" onclick="swTab('trk',this)"><span class="tab-ic">📊</span>Tracker</button>
+  <button class="tab" onclick="swTab('fld',this)"><span class="tab-ic">📋</span>Field Notes</button>
 </div>
 
-<!-- ============ TOAST AREA ============ -->
 <div class="tst-c" id="tstC"></div>
 
-<!-- ============ CONTENT ============ -->
 <div class="cnt">
 
-  <!-- ======== CALENDAR TAB ======== -->
-  <div class="pnl act" id="pCal">
-    <div class="crd">
-      <div class="crd-t">📅 Add Calendar Event</div>
-      <div class="steps">
-        <div class="step cur" id="cS1"><span class="snum">1</span>Speak</div>
-        <span class="sarr">›</span>
-        <div class="step" id="cS2"><span class="snum">2</span>Review</div>
-        <span class="sarr">›</span>
-        <div class="step" id="cS3"><span class="snum">3</span>Save</div>
-      </div>
-      <div class="vc-sec">
-        <button class="vc-btn" id="vbCal" onclick="startVoice('cal')">🎙️</button>
-        <div class="vc-lbl" id="vlCal">Tap to speak your meeting details</div>
-      </div>
-      <div class="trn" id="trCal" contenteditable="true"
-           oninput="this.setAttribute('data-typed','1')"></div>
-      <div class="qa">
-        <button class="qa-b" onclick="setTxt('cal','Schedule meeting about project review tomorrow at 3 PM to 4 PM')">📋 Project Review</button>
-        <button class="qa-b" onclick="setTxt('cal','Schedule team standup today at 10 AM to 10:30 AM')">👥 Team Standup</button>
-        <button class="qa-b" onclick="setTxt('cal','Schedule site visit meeting tomorrow at 11 AM to 12 PM')">🏗️ Site Visit</button>
-        <button class="qa-b" onclick="setTxt('cal','Schedule budget review meeting on Monday at 2 PM to 3 PM')">💰 Budget Review</button>
-      </div>
-
-      <!-- Saved Contacts for Calendar -->
-      <div class="ct-sec">
-        <div class="fl">👥 Quick Add Guests (saved contacts)</div>
-        <div class="ct-chips" id="ctChips">
-          <span style="font-size:11px;color:#aaa">Loading contacts...</span>
+<!-- ======== CALENDAR ======== -->
+<div class="pnl act" id="pCal">
+  <div class="crd">
+    <div class="crd-t">Add Calendar Event</div>
+    <div class="vc-sec">
+      <button class="vc-btn" id="vbCal" onclick="startVoice('cal')">🎙️</button>
+      <div class="vc-lbl" id="vlCal">Tap to speak meeting details</div>
+    </div>
+    <div class="trn" id="trCal" contenteditable="true"></div>
+    <div class="qa">
+      <button class="qa-b" onclick="setTxt('cal','Schedule meeting about project review tomorrow at 3 PM to 4 PM')">Project Review</button>
+      <button class="qa-b" onclick="setTxt('cal','Schedule team standup today at 10 AM to 10:30 AM')">Team Standup</button>
+      <button class="qa-b" onclick="setTxt('cal','Schedule site visit tomorrow at 11 AM to 12 PM')">Site Visit</button>
+      <button class="qa-b" onclick="setTxt('cal','Schedule budget review on Monday at 2 PM to 3 PM')">Budget Review</button>
+    </div>
+    <div class="ct-sec">
+      <div class="fl">Quick Add Guests (saved contacts)</div>
+      <div class="ct-chips" id="ctChips"><span style="font-size:11px;color:#aaa">Loading...</span></div>
+      <span class="ct-manage" onclick="tgEl('ctMgr')">Manage Contacts</span>
+      <div class="ct-mgr" id="ctMgr">
+        <div class="ct-mgr-row">
+          <input class="fi" id="ctName" placeholder="Name" style="padding:7px">
+          <input class="fi" id="ctEmail" placeholder="email@example.com" style="padding:7px">
+          <input class="fi" id="ctLabel" placeholder="Label" style="padding:7px;max-width:80px">
+          <button class="btn btn-p btn-sm" onclick="addContact()">Save</button>
         </div>
-        <span class="ct-manage" onclick="tgEl('ctMgr')">➕ Manage Contacts</span>
-        <div class="ct-mgr" id="ctMgr">
-          <div class="ct-mgr-row">
-            <input class="fi" id="ctName" placeholder="Name" style="padding:8px">
-            <input class="fi" id="ctEmail" placeholder="email@example.com" style="padding:8px">
-            <input class="fi" id="ctLabel" placeholder="Label (optional)" style="padding:8px;max-width:100px">
-            <button class="btn btn-p btn-sm" onclick="addContact()" style="white-space:nowrap">+ Save</button>
-          </div>
-          <div class="ct-list" id="ctList"></div>
-        </div>
-      </div>
-
-      <div class="mtg" onclick="tgEl('mfCal')">📝 Fill manually instead ▾</div>
-      <div class="mfm" id="mfCal">
-        <div class="fg">
-          <label class="fl">Meeting Title</label>
-          <input class="fi" id="cTt" placeholder="e.g. Project Review Meeting">
-        </div>
-        <div class="fg">
-          <label class="fl">Date (DD/MM/YYYY)</label>
-          <input class="fi" id="cDt" placeholder="e.g. 25/01/2025">
-        </div>
-        <div class="fg">
-          <label class="fl">Start Time</label>
-          <input class="fi" id="cSt" placeholder="e.g. 3:00 PM">
-        </div>
-        <div class="fg">
-          <label class="fl">End Time</label>
-          <input class="fi" id="cEt" placeholder="e.g. 4:00 PM">
-        </div>
-        <div class="fg">
-          <label class="fl">Guest Emails (comma separated)</label>
-          <input class="fi" id="cGs" placeholder="a@gmail.com, b@gov.in">
-        </div>
-        <div class="fg">
-          <label class="fl">Description / Agenda</label>
-          <textarea class="fi" id="cDs" placeholder="Meeting agenda..."></textarea>
-        </div>
-      </div>
-      <div class="pvbox" id="pvCal">
-        <div class="pvbox-lbl">📋 Parsed Details — Review Before Saving</div>
-        <div id="pvCalC"></div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-s btn-sm" onclick="prevCal()" style="flex:1">👁️ Preview</button>
-        <button class="btn btn-p" id="sbCal" onclick="submitCal()" style="flex:2.5">📅 Add to Calendar</button>
+        <div id="ctList"></div>
       </div>
     </div>
-    <div class="crd">
-      <div class="crd-t">
-        📅 Today's Events
-        <button class="btn btn-sm btn-s" onclick="ldCal()" style="margin-left:auto">↻ Refresh</button>
-      </div>
-      <div id="calEvs">
-        <div class="emp"><span class="spn spn-d"></span><div class="emp-tx" style="margin-top:8px">Loading events...</div></div>
-      </div>
+    <div class="mtg" onclick="tgEl('mfCal')">Fill manually instead</div>
+    <div class="mfm" id="mfCal">
+      <div class="fg"><label class="fl">Title</label><input class="fi" id="cTt" placeholder="Meeting title"></div>
+      <div class="fg"><label class="fl">Date (DD/MM/YYYY)</label><input class="fi" id="cDt" placeholder="25/01/2025"></div>
+      <div class="fg"><label class="fl">Start Time</label><input class="fi" id="cSt" placeholder="3:00 PM"></div>
+      <div class="fg"><label class="fl">End Time</label><input class="fi" id="cEt" placeholder="4:00 PM"></div>
+      <div class="fg"><label class="fl">Guest Emails</label><input class="fi" id="cGs" placeholder="a@gmail.com, b@gov.in"></div>
+      <div class="fg"><label class="fl">Description</label><textarea class="fi" id="cDs" placeholder="Agenda..."></textarea></div>
+    </div>
+    <!-- Editable Preview -->
+    <div class="edit-prev" id="epCal">
+      <div class="edit-prev-lbl">Review and Edit Before Saving</div>
+      <div class="edit-prev-body" id="epCalBody"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-s btn-sm" onclick="prevCal()" style="flex:1">Preview</button>
+      <button class="btn btn-p" id="sbCal" onclick="submitCal()" style="flex:2.5">Add to Calendar</button>
     </div>
   </div>
+  <div class="crd">
+    <div class="crd-t">Today's Events <button class="btn btn-sm btn-s" onclick="ldCal()" style="margin-left:auto">Refresh</button></div>
+    <div id="calEvs"><div class="emp"><span class="spn spn-d"></span><div class="emp-tx" style="margin-top:6px">Loading...</div></div></div>
+  </div>
+</div>
 
-  <!-- ======== DAILY DOC TAB ======== -->
-  <div class="pnl" id="pDoc">
-    <div class="crd">
-      <div class="crd-t">📝 Daily Work Documentation</div>
-      <div style="font-size:11px;color:#888;margin-bottom:10px;line-height:1.5">
-        📌 <strong>How it works:</strong> Your doc is organized by <strong>Week → Day</strong>. Each entry is timestamped under today's date. Choose paragraph, bullet, or mixed format. Highlight important keywords.
-      </div>
-      <div class="steps">
-        <div class="step cur" id="dS1"><span class="snum">1</span>Speak</div>
-        <span class="sarr">›</span>
-        <div class="step" id="dS2"><span class="snum">2</span>Grammar</div>
-        <span class="sarr">›</span>
-        <div class="step" id="dS3"><span class="snum">3</span>Save</div>
-      </div>
-      <div class="vc-sec">
-        <button class="vc-btn" id="vbDoc" onclick="startVoice('doc')">🎙️</button>
-        <div class="vc-lbl" id="vlDoc">Speak your daily work naturally</div>
-      </div>
-      <div class="trn" id="trDoc" contenteditable="true"
-           oninput="this.setAttribute('data-typed','1')"></div>
-      <div class="qa">
-        <button class="qa-b" onclick="addTxt('doc','Attended morning standup with the team. ')">🌅 Standup</button>
-        <button class="qa-b" onclick="addTxt('doc','Reviewed and responded to official emails. ')">📧 Emails</button>
-        <button class="qa-b" onclick="addTxt('doc','Prepared and submitted the required report. ')">📄 Report</button>
-        <button class="qa-b" onclick="addTxt('doc','Coordinated with stakeholders on the project. ')">🤝 Coordination</button>
-        <button class="qa-b" onclick="addTxt('doc','Attended review meeting with senior officials. ')">👔 Review Mtg</button>
-        <button class="qa-b" onclick="addTxt('doc','Conducted site visit and inspection. ')">🏗️ Site Visit</button>
-      </div>
-
-      <!-- Format Selection -->
-      <div class="fg">
-        <label class="fl">📐 Document Format</label>
-        <div class="fmt-opts">
-          <button class="fmt-btn sel" onclick="selFmt(this,'paragraph')">📄 Paragraph</button>
-          <button class="fmt-btn" onclick="selFmt(this,'bullet')">• Bullet Points</button>
-          <button class="fmt-btn" onclick="selFmt(this,'mixed')">📄• Mixed</button>
-        </div>
-      </div>
-
-      <!-- Highlight Keywords -->
-      <div class="hl-sec">
-        <label class="fl">🖍️ Highlight Keywords (yellow highlight in doc)</label>
-        <div class="hl-input">
-          <input class="fi" id="hlInput" placeholder="Type keyword & press Add" style="padding:8px">
-          <button class="btn btn-sm btn-s" onclick="addHighlight()">+ Add</button>
-        </div>
-        <div class="hl-tags" id="hlTags"></div>
-      </div>
-
-      <div class="gprev" id="gprev">
-        <div class="gprev-lbl">✨ Grammar Corrected
-          <span style="font-size:10px;font-weight:400;color:#8bc34a">(edit freely below)</span>
-        </div>
-        <div class="gprev-edit" id="gprevE" contenteditable="true"></div>
-        <div class="gprev-note">✏️ This corrected text will be saved to your Google Doc. Edit anything above.</div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-o btn-sm" onclick="checkGrammar()" style="flex:1.3" id="gramBtn">✨ Check Grammar</button>
-        <button class="btn btn-p" id="sbDoc" onclick="submitDoc()" style="flex:2">📝 Save to Doc</button>
+<!-- ======== DAILY DOC ======== -->
+<div class="pnl" id="pDoc">
+  <div class="crd">
+    <div class="crd-t">Daily Work Documentation</div>
+    <div style="font-size:11px;color:#888;margin-bottom:8px;line-height:1.5">
+      Your doc is organized by Week then Day. Choose format below. Grammar check is optional.
+    </div>
+    <div class="vc-sec">
+      <button class="vc-btn" id="vbDoc" onclick="startVoice('doc')">🎙️</button>
+      <div class="vc-lbl" id="vlDoc">Speak your daily work</div>
+    </div>
+    <div class="trn" id="trDoc" contenteditable="true"></div>
+    <div class="qa">
+      <button class="qa-b" onclick="addTxt('doc','Attended morning standup with the team. ')">Standup</button>
+      <button class="qa-b" onclick="addTxt('doc','Reviewed and responded to official emails. ')">Emails</button>
+      <button class="qa-b" onclick="addTxt('doc','Prepared and submitted the required report. ')">Report</button>
+      <button class="qa-b" onclick="addTxt('doc','Coordinated with stakeholders on the project. ')">Coordination</button>
+      <button class="qa-b" onclick="addTxt('doc','Attended review meeting with senior officials. ')">Review Meeting</button>
+      <button class="qa-b" onclick="addTxt('doc','Conducted site visit and inspection. ')">Site Visit</button>
+    </div>
+    <div class="fg">
+      <label class="fl">Document Format</label>
+      <div class="fmt-opts">
+        <button class="fmt-btn sel" onclick="selFmt(this,'paragraph')">Paragraph</button>
+        <button class="fmt-btn" onclick="selFmt(this,'bullet')">Bullet Points</button>
+        <button class="fmt-btn" onclick="selFmt(this,'mixed')">Mixed</button>
       </div>
     </div>
-    <div class="crd">
-      <div class="crd-t">
-        📄 Last Entry Preview
-        <button class="btn btn-sm btn-s" onclick="ldDoc()" style="margin-left:auto">↻ Refresh</button>
+    <div class="hl-sec">
+      <label class="fl">Highlight Keywords (yellow highlight in doc)</label>
+      <div class="hl-input">
+        <input class="fi" id="hlInput" placeholder="Type keyword" style="padding:7px">
+        <button class="btn btn-sm btn-s" onclick="addHighlight()">Add</button>
       </div>
-      <div id="rcDoc">
-        <div class="emp"><span class="spn spn-d"></span></div>
-      </div>
+      <div class="hl-tags" id="hlTags"></div>
+    </div>
+    <div class="gprev" id="gprev">
+      <div class="gprev-lbl">Grammar Corrected (edit below)</div>
+      <div class="gprev-edit" id="gprevE" contenteditable="true"></div>
+      <div class="gprev-note">This corrected text will be saved. Edit anything above.</div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-o btn-sm" onclick="checkGrammar('doc')" style="flex:1.2">Check Grammar (optional)</button>
+      <button class="btn btn-p" id="sbDoc" onclick="submitDoc()" style="flex:2">Save to Doc</button>
     </div>
   </div>
+  <div class="crd">
+    <div class="crd-t">Last Entry <button class="btn btn-sm btn-s" onclick="ldDoc()" style="margin-left:auto">Refresh</button></div>
+    <div id="rcDoc"><div class="emp"><span class="spn spn-d"></span></div></div>
+  </div>
+</div>
 
-  <!-- ======== TRACKER TAB ======== -->
-  <div class="pnl" id="pTrk">
-    <div class="crd">
-      <div class="crd-t">📊 Daily Work Tracker</div>
-      <div class="steps">
-        <div class="step cur" id="tS1"><span class="snum">1</span>Speak</div>
-        <span class="sarr">›</span>
-        <div class="step" id="tS2"><span class="snum">2</span>Review</div>
-        <span class="sarr">›</span>
-        <div class="step" id="tS3"><span class="snum">3</span>Save</div>
-      </div>
-      <div class="vc-sec">
-        <button class="vc-btn" id="vbTrk" onclick="startVoice('trk')">🎙️</button>
-        <div class="vc-lbl" id="vlTrk">Say: Task name, stakeholder, remark</div>
-      </div>
-      <div class="trn" id="trTrk" contenteditable="true"
-           oninput="this.setAttribute('data-typed','1')"></div>
-      <div class="mtg" onclick="tgEl('mfTrk')">📝 Fill manually instead ▾</div>
-      <div class="mfm" id="mfTrk">
-        <div class="fg">
-          <label class="fl">Task Name</label>
-          <input class="fi" id="tTk" placeholder="e.g. File review and processing">
-        </div>
-        <div class="fg">
-          <label class="fl">Date</label>
-          <input class="fi" id="tDt">
-        </div>
-        <div class="fg">
-          <label class="fl">Stakeholder Engaged</label>
-          <input class="fi" id="tSh" placeholder="e.g. DM Office, BDO">
-        </div>
-        <div class="fg">
-          <label class="fl">Remark</label>
-          <input class="fi" id="tRm" placeholder="e.g. Completed / In Progress">
-        </div>
-      </div>
-      <div class="pvbox" id="pvTrk">
-        <div class="pvbox-lbl">📋 Entry Preview — Check Before Saving</div>
-        <div id="pvTrkC"></div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-s btn-sm" onclick="prevTrk()" style="flex:1">👁️ Preview</button>
-        <button class="btn btn-p" id="sbTrk" onclick="submitTrk()" style="flex:2.5">📊 Update Tracker</button>
-      </div>
+<!-- ======== TRACKER ======== -->
+<div class="pnl" id="pTrk">
+  <div class="crd">
+    <div class="crd-t">Daily Work Tracker</div>
+    <div class="vc-sec">
+      <button class="vc-btn" id="vbTrk" onclick="startVoice('trk')">🎙️</button>
+      <div class="vc-lbl" id="vlTrk">Say: Task name, stakeholder, remark</div>
     </div>
-    <div class="crd">
-      <div class="crd-t">
-        📊 Recent Entries
-        <button class="btn btn-sm btn-s" onclick="ldTrk()" style="margin-left:auto">↻ Refresh</button>
-      </div>
-      <div id="trkRows" style="overflow-x:auto">
-        <div class="emp"><span class="spn spn-d"></span></div>
-      </div>
+    <div class="trn" id="trTrk" contenteditable="true"></div>
+    <div class="mtg" onclick="tgEl('mfTrk')">Fill manually instead</div>
+    <div class="mfm" id="mfTrk">
+      <div class="fg"><label class="fl">Task Name</label><input class="fi" id="tTk" placeholder="File review and processing"></div>
+      <div class="fg"><label class="fl">Date</label><input class="fi" id="tDt"></div>
+      <div class="fg"><label class="fl">Stakeholder Engaged</label><input class="fi" id="tSh" placeholder="DM Office, BDO"></div>
+      <div class="fg"><label class="fl">Remark</label><input class="fi" id="tRm" placeholder="Completed / In Progress"></div>
+    </div>
+    <div class="edit-prev" id="epTrk">
+      <div class="edit-prev-lbl">Review and Edit Before Saving</div>
+      <div class="edit-prev-body" id="epTrkBody"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-s btn-sm" onclick="prevTrk()" style="flex:1">Preview</button>
+      <button class="btn btn-p" id="sbTrk" onclick="submitTrk()" style="flex:2.5">Update Tracker</button>
     </div>
   </div>
+  <div class="crd">
+    <div class="crd-t">Recent Entries <button class="btn btn-sm btn-s" onclick="ldTrk()" style="margin-left:auto">Refresh</button></div>
+    <div id="trkRows" style="overflow-x:auto"><div class="emp"><span class="spn spn-d"></span></div></div>
+  </div>
+</div>
 
-  <!-- ======== FIELD NOTES TAB ======== -->
-  <div class="pnl" id="pFld">
-    <div class="crd">
-      <div class="crd-t">🏗️ Field Notes — Visits, Letters & Messages</div>
-      <div style="font-size:11px;color:#888;margin-bottom:10px;line-height:1.5">
-        📌 Quick-save visit reports, official letters, or short updates. Each entry is timestamped and grammar-corrected automatically. Saved to a <strong>separate Google Doc</strong>.
-      </div>
-      <div class="steps">
-        <div class="step cur" id="fS1"><span class="snum">1</span>Speak</div>
-        <span class="sarr">›</span>
-        <div class="step" id="fS2"><span class="snum">2</span>Review</div>
-        <span class="sarr">›</span>
-        <div class="step" id="fS3"><span class="snum">3</span>Save</div>
-      </div>
-
-      <!-- Note Type -->
-      <div class="fg">
-        <label class="fl">📋 Note Type</label>
-        <div class="nt-opts">
-          <button class="nt-btn sel" onclick="selNoteType(this,'visit')">🏗️ Site Visit</button>
-          <button class="nt-btn" onclick="selNoteType(this,'letter')">✉️ Letter</button>
-          <button class="nt-btn" onclick="selNoteType(this,'message')">💬 Short Message</button>
-          <button class="nt-btn" onclick="selNoteType(this,'general')">📋 General Note</button>
-        </div>
-      </div>
-
-      <!-- Location (for visits) -->
-      <div class="fg" id="fldLocWrap">
-        <label class="fl">📍 Location / Site Name</label>
-        <input class="fi" id="fldLoc" placeholder="e.g. Block Office, Patna">
-      </div>
-
-      <div class="vc-sec">
-        <button class="vc-btn" id="vbFld" onclick="startVoice('fld')">🎙️</button>
-        <div class="vc-lbl" id="vlFld">Speak your visit report or message</div>
-      </div>
-      <div class="trn" id="trFld" contenteditable="true"
-           oninput="this.setAttribute('data-typed','1')"></div>
-      <div class="qa">
-        <button class="qa-b" onclick="addTxt('fld','Visited the site and inspected the ongoing work. ')">🏗️ Site Inspection</button>
-        <button class="qa-b" onclick="addTxt('fld','Met with local officials and discussed progress. ')">🤝 Official Meeting</button>
-        <button class="qa-b" onclick="addTxt('fld','Observed issues that need immediate attention. ')">⚠️ Issue Noted</button>
-        <button class="qa-b" onclick="addTxt('fld','All work found satisfactory and on schedule. ')">✅ Satisfactory</button>
-      </div>
-
-      <div class="gprev" id="gprevFld">
-        <div class="gprev-lbl">✨ Grammar Corrected
-          <span style="font-size:10px;font-weight:400;color:#8bc34a">(edit freely below)</span>
-        </div>
-        <div class="gprev-edit" id="gprevFldE" contenteditable="true"></div>
-        <div class="gprev-note">✏️ This corrected text will be saved. Edit anything above.</div>
-      </div>
-
-      <div class="btn-row">
-        <button class="btn btn-o btn-sm" onclick="checkGrammarFld()" style="flex:1.3">✨ Check Grammar</button>
-        <button class="btn btn-f" id="sbFld" onclick="submitFld()" style="flex:2">🏗️ Save Field Note</button>
+<!-- ======== FIELD NOTES ======== -->
+<div class="pnl" id="pFld">
+  <div class="crd">
+    <div class="crd-t">Field Notes — Visits, Letters, Messages</div>
+    <div style="font-size:11px;color:#888;margin-bottom:8px;line-height:1.5">
+      Quick-save visit reports, letters, or short updates to a separate Google Doc. Grammar check is optional.
+    </div>
+    <div class="fg">
+      <label class="fl">Note Type</label>
+      <div class="nt-opts">
+        <button class="nt-btn sel" onclick="selNT(this,'visit')">Site Visit</button>
+        <button class="nt-btn" onclick="selNT(this,'letter')">Letter</button>
+        <button class="nt-btn" onclick="selNT(this,'message')">Short Message</button>
+        <button class="nt-btn" onclick="selNT(this,'general')">General Note</button>
       </div>
     </div>
-    <div class="crd">
-      <div class="crd-t">
-        🏗️ Recent Field Notes
-        <button class="btn btn-sm btn-s" onclick="ldFld()" style="margin-left:auto">↻ Refresh</button>
-      </div>
-      <div id="fldNotes">
-        <div class="emp"><span class="spn spn-d"></span></div>
-      </div>
+    <div class="fg" id="fldLocWrap">
+      <label class="fl">Location / Site Name</label>
+      <input class="fi" id="fldLoc" placeholder="Block Office, Patna">
+    </div>
+    <div class="vc-sec">
+      <button class="vc-btn" id="vbFld" onclick="startVoice('fld')">🎙️</button>
+      <div class="vc-lbl" id="vlFld">Speak your report or message</div>
+    </div>
+    <div class="trn" id="trFld" contenteditable="true"></div>
+    <div class="qa">
+      <button class="qa-b" onclick="addTxt('fld','Visited the site and inspected ongoing work. ')">Site Inspection</button>
+      <button class="qa-b" onclick="addTxt('fld','Met with local officials and discussed progress. ')">Official Meeting</button>
+      <button class="qa-b" onclick="addTxt('fld','Observed issues needing immediate attention. ')">Issue Noted</button>
+      <button class="qa-b" onclick="addTxt('fld','All work found satisfactory and on schedule. ')">Satisfactory</button>
+    </div>
+    <div class="gprev" id="gprevFld">
+      <div class="gprev-lbl">Grammar Corrected (edit below)</div>
+      <div class="gprev-edit" id="gprevFldE" contenteditable="true"></div>
+      <div class="gprev-note">This corrected text will be saved. Edit anything above.</div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-o btn-sm" onclick="checkGrammar('fld')" style="flex:1.2">Check Grammar (optional)</button>
+      <button class="btn btn-f" id="sbFld" onclick="submitFld()" style="flex:2">Save Field Note</button>
     </div>
   </div>
+  <div class="crd">
+    <div class="crd-t">Recent Field Notes <button class="btn btn-sm btn-s" onclick="ldFld()" style="margin-left:auto">Refresh</button></div>
+    <div id="fldNotes"><div class="emp"><span class="spn spn-d"></span></div></div>
+  </div>
+</div>
 
-</div><!-- end .cnt -->
+</div>
 
 <script>
 // ================================================
-// CONFIGURATION & SETUP
+// CONFIG
 // ================================================
 var GAS = localStorage.getItem('gasUrl') || '';
 var OV  = document.getElementById('setupOverlay');
 
-// Voice recognition state — FIXED (no repetition)
-var recog      = null;
-var recTarget  = null;
-var isRec      = false;
-var finalWords = '';      // stores only confirmed final words
-
-// Doc format state
+// State
 var selectedFormat   = 'paragraph';
 var highlightWords   = [];
 var selectedNoteType = 'visit';
-var selectedContacts = []; // emails selected for calendar
+var selectedContacts = [];
 
 function init() {
-  if (!GAS) {
-    OV.style.display = 'flex';
-    return;
-  }
+  if (!GAS) { OV.style.display = 'flex'; return; }
   OV.style.display = 'none';
   askMic();
   loadAll();
@@ -755,210 +568,214 @@ function init() {
 
 function saveSetup() {
   var url = (document.getElementById('gasUrlInput').value || '').trim();
-  if (!url) {
-    alert('Please paste your Apps Script URL first.');
-    return;
-  }
+  if (!url) { alert('Please paste your Apps Script URL.'); return; }
   if (!url.startsWith('https://script.google.com')) {
-    alert('That does not look like an Apps Script URL.\n\nIt should start with:\nhttps://script.google.com/macros/s/');
-    return;
+    alert('URL must start with https://script.google.com/macros/s/'); return;
   }
   localStorage.setItem('gasUrl', url);
   GAS = url;
   OV.style.display = 'none';
-  toast('s', 'Connected!', 'Connecting to your Google services...');
+  toast('s','Connected','Loading your services...');
   askMic();
   loadAll();
 }
 
 function openSettings() {
-  var current = localStorage.getItem('gasUrl') || '';
-  document.getElementById('gasUrlInput').value = current;
+  document.getElementById('gasUrlInput').value = localStorage.getItem('gasUrl') || '';
   var sm = document.getElementById('savedMsg');
-  sm.style.display = current ? 'flex' : 'none';
+  sm.style.display = GAS ? 'block' : 'none';
   OV.style.display = 'flex';
 }
 
-
-// ================================================
-// DATE & AUTO-FILL
-// ================================================
+// Date
 document.getElementById('hdrDate').textContent =
-  new Date().toLocaleDateString('en-IN',
-    {weekday:'long', year:'numeric', month:'long', day:'numeric'});
-
-var tDt = document.getElementById('tDt');
-if (tDt) tDt.value = new Date().toLocaleDateString('en-IN',
-  {day:'2-digit', month:'2-digit', year:'numeric'});
+  new Date().toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+var tDtEl = document.getElementById('tDt');
+if (tDtEl) tDtEl.value = new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric'});
 
 
 // ================================================
-// MICROPHONE PERMISSION
+// MICROPHONE
 // ================================================
 function askMic() {
   var ban = document.getElementById('micBanner');
   ban.style.display = 'flex';
   ban.className = 'mic-ban';
-  ban.innerHTML = '🎙️ Requesting microphone access...';
-
+  ban.innerHTML = 'Requesting microphone access...';
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     ban.className = 'mic-ban er';
-    ban.innerHTML = '⚠️ This browser cannot access microphone. Please use <strong>Chrome</strong> on Android.';
+    ban.innerHTML = 'Browser cannot access microphone. Use Chrome on Android.';
     return;
   }
-
-  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+  navigator.mediaDevices.getUserMedia({audio:true,video:false})
     .then(function(stream) {
-      stream.getTracks().forEach(function(t) { t.stop(); });
+      stream.getTracks().forEach(function(t){t.stop();});
       ban.className = 'mic-ban ok';
-      ban.innerHTML = '✅ Microphone ready — Voice input enabled!';
-      setTimeout(function() { ban.style.display = 'none'; }, 3000);
+      ban.innerHTML = 'Microphone ready.';
+      setTimeout(function(){ban.style.display='none';}, 2500);
     })
     .catch(function(err) {
       ban.className = 'mic-ban er';
       if (err.name === 'NotAllowedError') {
-        ban.innerHTML =
-          '🚫 <strong>Microphone blocked.</strong> ' +
-          'Tap the 🔒 lock in address bar → Site settings → Microphone → Allow. ' +
-          '<span class="mic-lnk" onclick="askMic()">Try Again</span>';
-      } else if (err.name === 'NotFoundError') {
-        ban.innerHTML = '⚠️ No microphone found. Use manual input forms below.';
+        ban.innerHTML = 'Microphone blocked. Tap lock icon in address bar, allow microphone. <span class="mic-lnk" onclick="askMic()">Try Again</span>';
       } else {
-        ban.innerHTML = '⚠️ Mic error: ' + err.name +
-          ' <span class="mic-lnk" onclick="askMic()">Retry</span>';
+        ban.innerHTML = 'Mic error: ' + err.name + ' <span class="mic-lnk" onclick="askMic()">Retry</span>';
       }
     });
 }
 
 
 // ================================================
-// VOICE RECOGNITION — FIXED (no word repetition)
+// SPEECH RECOGNITION — COMPLETE REWRITE
+// ================================================
+// The duplication problem happens because:
+// 1. continuous=true + auto-restart in onend creates a NEW session
+// 2. New session resets resultIndex to 0
+// 3. Same audio gets re-transcribed
+//
+// FIX: Use NON-continuous mode.
+// Each session captures one phrase/sentence, finalizes it,
+// then auto-restarts cleanly. finalText accumulates across
+// sessions. No duplication possible because each session
+// only returns its own NEW audio.
 // ================================================
 
+var recog      = null;
+var recTarget  = null;
+var isRec      = false;
+var finalText  = '';   // accumulates across restart sessions
+
 var VID = {
-  cal: { btn:'vbCal', lbl:'vlCal', trn:'trCal', s:['cS1','cS2','cS3'] },
-  doc: { btn:'vbDoc', lbl:'vlDoc', trn:'trDoc', s:['dS1','dS2','dS3'] },
-  trk: { btn:'vbTrk', lbl:'vlTrk', trn:'trTrk', s:['tS1','tS2','tS3'] },
-  fld: { btn:'vbFld', lbl:'vlFld', trn:'trFld', s:['fS1','fS2','fS3'] }
+  cal: {btn:'vbCal',lbl:'vlCal',trn:'trCal'},
+  doc: {btn:'vbDoc',lbl:'vlDoc',trn:'trDoc'},
+  trk: {btn:'vbTrk',lbl:'vlTrk',trn:'trTrk'},
+  fld: {btn:'vbFld',lbl:'vlFld',trn:'trFld'}
 };
 
 function startVoice(t) {
   if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    toast('e', 'Not Supported', 'Please use Chrome for voice input.');
-    return;
+    toast('e','Not Supported','Use Chrome for voice input.'); return;
   }
   if (isRec) { stopVoice(); return; }
 
-  // Reset for new recording session
-  finalWords = '';
+  // Reset
+  finalText = '';
 
-  navigator.mediaDevices.getUserMedia({ audio: true })
+  navigator.mediaDevices.getUserMedia({audio:true})
     .then(function(s) {
-      s.getTracks().forEach(function(tr) { tr.stop(); });
-      doSpeech(t);
+      s.getTracks().forEach(function(tr){tr.stop();});
+      beginRecognition(t);
     })
-    .catch(function(err) {
-      var ban = document.getElementById('micBanner');
-      ban.style.display = 'flex';
-      ban.className = 'mic-ban er';
-      ban.innerHTML = '🚫 Mic blocked. <span class="mic-lnk" onclick="askMic()">Tap to allow</span> or check Chrome site settings.';
-      toast('e', 'Mic Blocked', 'Allow microphone and try again.');
+    .catch(function() {
+      toast('e','Mic Blocked','Allow microphone and try again.');
     });
 }
 
-function doSpeech(t) {
-  recTarget  = t;
-  finalWords = '';
+function beginRecognition(t) {
+  recTarget = t;
+  finalText = '';
 
   var m   = VID[t];
   var btn = document.getElementById(m.btn);
   var lbl = document.getElementById(m.lbl);
   var trn = document.getElementById(m.trn);
 
-  // Clear transcript box for fresh start
   trn.textContent = '';
-  trn.removeAttribute('data-final');
 
+  createAndStartRecognizer(btn, lbl, trn);
+}
+
+function createAndStartRecognizer(btn, lbl, trn) {
+  // Create fresh recognizer each time
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  recog  = new SR();
+  recog = new SR();
 
-  recog.lang            = 'en-IN';
+  // KEY: continuous = false
+  // Each session captures ONE utterance, finalizes, ends.
+  // No duplication because each session is independent.
+  recog.continuous      = false;
   recog.interimResults  = true;
-  recog.continuous      = true;
+  recog.lang            = 'en-IN';
   recog.maxAlternatives = 1;
 
   recog.onstart = function() {
     isRec = true;
     btn.classList.add('rec');
-    btn.textContent = '⏹️';
-    lbl.textContent = '🔴 Recording... tap button to stop';
+    btn.textContent = '⏹';
+    lbl.textContent = 'Recording... tap to stop';
     trn.classList.add('live');
-    toast('i', 'Recording', 'Speak now. Tap the button to stop.');
   };
 
   recog.onresult = function(e) {
-    // THE KEY FIX: Only process NEW results starting from e.resultIndex
-    // This prevents re-processing old results when recognition restarts
-    var newFinal = '';
-    var interim  = '';
+    // In non-continuous mode, results are simple:
+    // e.results[0] = the current utterance
+    // When isFinal = true, this utterance is done
 
-    for (var i = e.resultIndex; i < e.results.length; i++) {
-      if (e.results[i].isFinal) {
-        newFinal += e.results[i][0].transcript;
-      } else {
-        interim += e.results[i][0].transcript;
-      }
+    var transcript = '';
+    var isFinal = false;
+
+    for (var i = 0; i < e.results.length; i++) {
+      transcript += e.results[i][0].transcript;
+      if (e.results[i].isFinal) isFinal = true;
     }
 
-    // Add new confirmed words to running total
-    if (newFinal) {
-      if (finalWords && !finalWords.endsWith(' ')) {
-        finalWords += ' ';
-      }
-      finalWords += newFinal;
-    }
+    if (isFinal) {
+      // This utterance is confirmed — add to our permanent store
+      if (finalText && !finalText.endsWith(' ')) finalText += ' ';
+      finalText += transcript;
 
-    // Show: confirmed words + current interim preview
-    var display = (finalWords + (interim ? ' ' + interim : '')).replace(/\s{2,}/g, ' ').trim();
-    trn.textContent = display;
+      // Show clean accumulated text
+      trn.textContent = finalText.replace(/\s{2,}/g,' ').trim();
+    } else {
+      // Show accumulated + current interim
+      var display = finalText + (finalText ? ' ' : '') + transcript;
+      trn.textContent = display.replace(/\s{2,}/g,' ').trim();
+    }
   };
 
   recog.onerror = function(e) {
-    console.log('Speech error:', e.error);
-    if (e.error === 'not-allowed') {
-      toast('e', 'Mic Blocked', 'Allow microphone and retry.');
-      stopVoice();
-    } else if (e.error === 'network') {
-      toast('e', 'Network Error', 'Check your internet connection.');
-      stopVoice();
-    } else if (e.error === 'no-speech') {
-      // User just paused — keep listening
-      lbl.textContent = '🔴 Still listening... speak when ready';
-    } else if (e.error !== 'aborted') {
-      toast('e', 'Speech Error', e.error);
-      stopVoice();
+    // no-speech: user was silent — just restart silently
+    if (e.error === 'no-speech' || e.error === 'aborted') {
+      // Do nothing, onend will handle restart
+      return;
     }
+    if (e.error === 'not-allowed') {
+      toast('e','Mic Blocked','Allow microphone access.');
+      stopVoice();
+      return;
+    }
+    if (e.error === 'network') {
+      toast('e','Network Error','Check internet connection.');
+      stopVoice();
+      return;
+    }
+    // Other errors — log but try to continue
+    console.log('Speech error:', e.error);
   };
 
   recog.onend = function() {
-    // Only restart if user has NOT stopped recording
+    // Session ended naturally (utterance complete or silence timeout)
+    // If user still wants to record, create a fresh recognizer and restart
     if (isRec) {
-      try {
-        setTimeout(function() {
-          if (isRec && recog) {
-            recog.start();
-          }
-        }, 150);
-      } catch (ex) {
-        stopVoice();
-      }
+      // Small delay to prevent rapid-fire restarts
+      setTimeout(function() {
+        if (isRec) {
+          // Create completely new recognizer (prevents any state leak)
+          createAndStartRecognizer(btn, lbl, trn);
+        }
+      }, 200);
     }
   };
 
   try {
     recog.start();
-  } catch (ex) {
-    toast('e', 'Failed to start', ex.message);
+  } catch(ex) {
+    // If start fails (e.g., already running), wait and retry
+    setTimeout(function() {
+      if (isRec) {
+        try { recog.start(); } catch(e2) { stopVoice(); }
+      }
+    }, 300);
   }
 }
 
@@ -966,9 +783,10 @@ function stopVoice() {
   isRec = false;
 
   if (recog) {
-    recog.onend   = null;
+    recog.onend = null;
     recog.onerror = null;
-    try { recog.stop(); } catch (e) {}
+    recog.onresult = null;
+    try { recog.abort(); } catch(e) {}
     recog = null;
   }
 
@@ -984,21 +802,17 @@ function stopVoice() {
   lbl.textContent = 'Tap to speak';
   trn.classList.remove('live');
 
-  // Use the clean finalWords (no repeats)
-  var cleanText = finalWords.replace(/\s{2,}/g, ' ').trim();
-  if (!cleanText) {
-    cleanText = trn.textContent.trim();
-  }
+  // Use accumulated finalText
+  var cleanText = finalText.replace(/\s{2,}/g,' ').trim();
+  if (!cleanText) cleanText = trn.textContent.trim();
   trn.textContent = cleanText;
 
-  finalWords = '';
+  finalText = '';
 
   if (cleanText) {
-    setStep(recTarget, 2);
-    toast('s', 'Voice Captured ✅',
-      'Read the text above carefully. Edit anything wrong before submitting.');
+    toast('s','Voice Captured','Read the text above. Edit if needed, then submit.');
   } else {
-    toast('i', 'Nothing Recorded', 'No speech detected. Try again.');
+    toast('i','Nothing Recorded','No speech detected. Try again.');
   }
 
   recTarget = null;
@@ -1006,189 +820,51 @@ function stopVoice() {
 
 
 // ================================================
-// STEP INDICATOR
+// HELPERS
 // ================================================
-function setStep(t, step) {
-  VID[t].s.forEach(function(id, i) {
-    var el = document.getElementById(id);
-    el.className = 'step';
-    if (i + 1 < step)      el.classList.add('done');
-    else if (i + 1 === step) el.classList.add('cur');
-  });
-}
-
-
-// ================================================
-// TEXT HELPERS
-// ================================================
-function setTxt(t, txt) {
-  document.getElementById(VID[t].trn).textContent = txt;
-}
+function setTxt(t, txt) { document.getElementById(VID[t].trn).textContent = txt; }
 function addTxt(t, txt) {
   var el = document.getElementById(VID[t].trn);
   el.textContent = (el.textContent + ' ' + txt).trim();
 }
-function tgEl(id) {
-  document.getElementById(id).classList.toggle('sh');
-}
-
-
-// ================================================
-// FORMAT SELECTION (Daily Doc)
-// ================================================
+function tgEl(id) { document.getElementById(id).classList.toggle('sh'); }
 function selFmt(btn, fmt) {
   selectedFormat = fmt;
-  document.querySelectorAll('.fmt-btn').forEach(function(b) { b.classList.remove('sel'); });
+  document.querySelectorAll('.fmt-btn').forEach(function(b){b.classList.remove('sel');});
   btn.classList.add('sel');
 }
+function selNT(btn, type) {
+  selectedNoteType = type;
+  document.querySelectorAll('.nt-btn').forEach(function(b){b.classList.remove('sel');});
+  btn.classList.add('sel');
+  document.getElementById('fldLocWrap').style.display = (type==='visit'||type==='general') ? 'block' : 'none';
+}
 
-
-// ================================================
-// HIGHLIGHT KEYWORDS
-// ================================================
+// Highlights
 function addHighlight() {
   var inp = document.getElementById('hlInput');
-  var word = inp.value.trim();
-  if (!word) return;
-  if (highlightWords.indexOf(word) === -1) {
-    highlightWords.push(word);
-  }
+  var w = inp.value.trim();
+  if (w && highlightWords.indexOf(w)===-1) highlightWords.push(w);
   inp.value = '';
-  renderHighlights();
+  renderHL();
 }
-
-function removeHighlight(idx) {
-  highlightWords.splice(idx, 1);
-  renderHighlights();
-}
-
-function renderHighlights() {
+function removeHL(i) { highlightWords.splice(i,1); renderHL(); }
+function renderHL() {
   var c = document.getElementById('hlTags');
-  if (!highlightWords.length) {
-    c.innerHTML = '';
-    return;
-  }
-  c.innerHTML = highlightWords.map(function(w, i) {
-    return '<span class="hl-tag">' + escHtml(w) +
-           ' <span class="hl-x" onclick="removeHighlight(' + i + ')">✕</span></span>';
+  c.innerHTML = highlightWords.map(function(w,i){
+    return '<span class="hl-tag">'+esc(w)+' <span class="hl-x" onclick="removeHL('+i+')">x</span></span>';
   }).join('');
 }
 
 
 // ================================================
-// NOTE TYPE SELECTION (Field Notes)
+// GRAMMAR CHECK — OPTIONAL, uses server polishText
 // ================================================
-function selNoteType(btn, type) {
-  selectedNoteType = type;
-  document.querySelectorAll('.nt-btn').forEach(function(b) { b.classList.remove('sel'); });
-  btn.classList.add('sel');
-  // Show/hide location field
-  document.getElementById('fldLocWrap').style.display =
-    (type === 'visit' || type === 'general') ? 'block' : 'none';
-}
-
-
-// ================================================
-// CONTACTS MANAGEMENT
-// ================================================
-function loadContacts() {
-  call('getContacts', {},
-    function(r) {
-      if (r.success) {
-        renderContactChips(r.contacts || []);
-        renderContactList(r.contacts || []);
-      }
-    },
-    function() {
-      document.getElementById('ctChips').innerHTML =
-        '<span style="font-size:11px;color:#ccc">Could not load contacts</span>';
-    }
-  );
-}
-
-function renderContactChips(contacts) {
-  var c = document.getElementById('ctChips');
-  if (!contacts.length) {
-    c.innerHTML = '<span style="font-size:11px;color:#ccc">No saved contacts. Add below ↓</span>';
-    return;
-  }
-  c.innerHTML = contacts.map(function(ct) {
-    return '<span class="ct-chip" onclick="toggleContact(this,\'' + escAttr(ct.email) + '\')" data-email="' + escAttr(ct.email) + '">' +
-           '👤 ' + escHtml(ct.name) +
-           (ct.label && ct.label !== 'General' ? ' <span style="opacity:.6;font-size:9px">(' + escHtml(ct.label) + ')</span>' : '') +
-           '</span>';
-  }).join('');
-}
-
-function renderContactList(contacts) {
-  var c = document.getElementById('ctList');
-  if (!contacts.length) {
-    c.innerHTML = '<div style="font-size:11px;color:#ccc;text-align:center;padding:8px">No contacts saved yet</div>';
-    return;
-  }
-  c.innerHTML = contacts.map(function(ct) {
-    return '<div class="ct-item">' +
-           '<div><strong>' + escHtml(ct.name) + '</strong> — ' + escHtml(ct.email) +
-           (ct.label ? ' <span style="color:#888;font-size:10px">(' + escHtml(ct.label) + ')</span>' : '') +
-           '</div>' +
-           '<span class="ct-del" onclick="delContact(' + ct.id + ')">✕</span>' +
-           '</div>';
-  }).join('');
-}
-
-function toggleContact(el, email) {
-  el.classList.toggle('sel');
-  var idx = selectedContacts.indexOf(email);
-  if (idx === -1) {
-    selectedContacts.push(email);
-  } else {
-    selectedContacts.splice(idx, 1);
-  }
-}
-
-function addContact() {
-  var name  = document.getElementById('ctName').value.trim();
-  var email = document.getElementById('ctEmail').value.trim();
-  var label = document.getElementById('ctLabel').value.trim() || 'General';
-  if (!name || !email) { toast('e', 'Missing Info', 'Name and email are required.'); return; }
-  call('saveContact', { name: name, email: email, label: label },
-    function(r) {
-      if (r.success) {
-        toast('s', 'Contact Saved', r.message);
-        document.getElementById('ctName').value = '';
-        document.getElementById('ctEmail').value = '';
-        document.getElementById('ctLabel').value = '';
-        loadContacts();
-      } else {
-        toast('e', 'Error', r.message);
-      }
-    },
-    function(err) { toast('e', 'Error', err); }
-  );
-}
-
-function delContact(id) {
-  if (!confirm('Delete this contact?')) return;
-  call('deleteContact', { id: id },
-    function(r) {
-      if (r.success) { toast('s', 'Deleted', r.message); loadContacts(); }
-      else { toast('e', 'Error', r.message); }
-    },
-    function(err) { toast('e', 'Error', err); }
-  );
-}
-
-
-// ================================================
-// GRAMMAR CORRECTION (client-side fallback)
-// ================================================
-function fixGrammar(raw) {
+function fixGrammarLocal(raw) {
   var t = raw.trim();
   if (!t) return t;
-
   var fixes = [
-    [/\bi\b/g,'I'],
-    [/\bi'm\b/gi,'I am'],[/\bi've\b/gi,'I have'],
+    [/\bi\b/g,'I'],[/\bi'm\b/gi,'I am'],[/\bi've\b/gi,'I have'],
     [/\bi'll\b/gi,'I will'],[/\bi'd\b/gi,'I would'],
     [/\bcan't\b/gi,'cannot'],[/\bdon't\b/gi,'do not'],
     [/\bwon't\b/gi,'will not'],[/\bdoesn't\b/gi,'does not'],
@@ -1212,19 +888,16 @@ function fixGrammar(raw) {
     [/\btold\b/gi,'informed'],[/\bwent\s+to\b/gi,'visited'],
     [/\b(um|uh|hmm|like|you know|basically|actually|so yeah|okay so)\b/gi,'']
   ];
-
-  fixes.forEach(function(f) { t = t.replace(f[0], f[1]); });
-  t = t.replace(/\s{2,}/g, ' ');
-  t = t.replace(/(^|\.\s+)([a-z])/g, function(m, p1, p2) { return p1 + p2.toUpperCase(); });
+  fixes.forEach(function(f){t = t.replace(f[0], f[1]);});
+  t = t.replace(/\s{2,}/g,' ');
+  t = t.replace(/(^|\.\s+)([a-z])/g, function(m,p1,p2){return p1+p2.toUpperCase();});
   t = t.charAt(0).toUpperCase() + t.slice(1);
   if (!t.match(/[.!?]$/)) t += '.';
-
   var sents = t.split(/(?<=[.!?])\s+/);
   var paras = [], cur = [];
-  sents.forEach(function(s) {
+  sents.forEach(function(s){
     cur.push(s);
-    if (cur.length >= 3 ||
-        s.match(/^(Then|After|Next|Also|Additionally|Furthermore|Later|In the)/i)) {
+    if (cur.length >= 3 || s.match(/^(Then|After|Next|Also|Additionally|Furthermore|Later|In the)/i)) {
       paras.push(cur.join(' ')); cur = [];
     }
   });
@@ -1232,134 +905,155 @@ function fixGrammar(raw) {
   return paras.join('\n\n');
 }
 
+function checkGrammar(section) {
+  var trnId = section === 'fld' ? 'trFld' : 'trDoc';
+  var gpId  = section === 'fld' ? 'gprevFld' : 'gprev';
+  var gpEId = section === 'fld' ? 'gprevFldE' : 'gprevE';
 
-// ================================================
-// GRAMMAR CHECK — Daily Doc
-// ================================================
-function checkGrammar() {
-  var raw = document.getElementById('trDoc').textContent.trim();
-  if (!raw) { toast('i', 'Nothing to check', 'Speak or type your work first.'); return; }
+  var raw = document.getElementById(trnId).textContent.trim();
+  if (!raw) { toast('i','Nothing to check','Speak or type first.'); return; }
 
-  var gp  = document.getElementById('gprev');
-  var gpE = document.getElementById('gprevE');
+  var gp  = document.getElementById(gpId);
+  var gpE = document.getElementById(gpEId);
   gp.classList.add('sh');
-  gpE.innerHTML = '<span class="spn spn-d"></span> Correcting grammar...';
+  gpE.innerHTML = '<span class="spn spn-d"></span> Checking...';
 
-  call('polishText', { text: raw },
+  call('polishText', {text: raw},
     function(r) {
-      gpE.textContent = (r.success && r.polished) ? r.polished : fixGrammar(raw);
-      setStep('doc', 2);
-      toast('s', 'Grammar Corrected', 'Review the text below. Edit anything before saving.');
+      gpE.textContent = (r.success && r.polished) ? r.polished : fixGrammarLocal(raw);
+      toast('s','Grammar Corrected','Review and edit below. This will be saved.');
     },
     function() {
-      gpE.textContent = fixGrammar(raw);
-      setStep('doc', 2);
-      toast('s', 'Grammar Corrected (offline)', 'Review the text below.');
+      gpE.textContent = fixGrammarLocal(raw);
+      toast('s','Grammar Corrected (offline)','Review below.');
     }
   );
 }
 
 
 // ================================================
-// GRAMMAR CHECK — Field Notes
+// CONTACTS
 // ================================================
-function checkGrammarFld() {
-  var raw = document.getElementById('trFld').textContent.trim();
-  if (!raw) { toast('i', 'Nothing to check', 'Speak or type your note first.'); return; }
-
-  var gp  = document.getElementById('gprevFld');
-  var gpE = document.getElementById('gprevFldE');
-  gp.classList.add('sh');
-  gpE.innerHTML = '<span class="spn spn-d"></span> Correcting grammar...';
-
-  call('polishText', { text: raw },
+function loadContacts() {
+  call('getContacts', {},
     function(r) {
-      gpE.textContent = (r.success && r.polished) ? r.polished : fixGrammar(raw);
-      setStep('fld', 2);
-      toast('s', 'Grammar Corrected', 'Review the text below.');
+      if (r.success) { renderChips(r.contacts||[]); renderCtList(r.contacts||[]); }
     },
     function() {
-      gpE.textContent = fixGrammar(raw);
-      setStep('fld', 2);
-      toast('s', 'Grammar Corrected (offline)', 'Review the text below.');
+      document.getElementById('ctChips').innerHTML = '<span style="font-size:11px;color:#ccc">Could not load</span>';
     }
   );
 }
 
+function renderChips(contacts) {
+  var c = document.getElementById('ctChips');
+  if (!contacts.length) { c.innerHTML = '<span style="font-size:11px;color:#ccc">No contacts saved. Add below.</span>'; return; }
+  c.innerHTML = contacts.map(function(ct) {
+    return '<span class="ct-chip" onclick="tgCt(this,\''+escA(ct.email)+'\')" data-email="'+escA(ct.email)+'">' +
+      esc(ct.name) + (ct.label&&ct.label!=='General'?' ('+esc(ct.label)+')':'') + '</span>';
+  }).join('');
+}
+
+function renderCtList(contacts) {
+  var c = document.getElementById('ctList');
+  if (!contacts.length) { c.innerHTML = '<div style="font-size:11px;color:#ccc;text-align:center;padding:6px">No contacts</div>'; return; }
+  c.innerHTML = contacts.map(function(ct) {
+    return '<div class="ct-item"><div><strong>'+esc(ct.name)+'</strong> — '+esc(ct.email)+
+      (ct.label?' ('+esc(ct.label)+')':'')+'</div><span class="ct-del" onclick="delCt('+ct.id+')">x</span></div>';
+  }).join('');
+}
+
+function tgCt(el, email) {
+  el.classList.toggle('sel');
+  var idx = selectedContacts.indexOf(email);
+  if (idx===-1) selectedContacts.push(email); else selectedContacts.splice(idx,1);
+}
+
+function addContact() {
+  var name=document.getElementById('ctName').value.trim();
+  var email=document.getElementById('ctEmail').value.trim();
+  var label=document.getElementById('ctLabel').value.trim()||'General';
+  if (!name||!email) {toast('e','Missing','Name and email required.');return;}
+  call('saveContact',{name:name,email:email,label:label},
+    function(r){if(r.success){toast('s','Saved',r.message);document.getElementById('ctName').value='';document.getElementById('ctEmail').value='';document.getElementById('ctLabel').value='';loadContacts();}else{toast('e','Error',r.message);}},
+    function(err){toast('e','Error',err);}
+  );
+}
+
+function delCt(id) {
+  if (!confirm('Delete this contact?')) return;
+  call('deleteContact',{id:id},function(r){if(r.success){toast('s','Deleted',r.message);loadContacts();}else{toast('e','Error',r.message);}},function(err){toast('e','Error',err);});
+}
+
 
 // ================================================
-// CALENDAR PREVIEW
+// CALENDAR PREVIEW — EDITABLE
 // ================================================
 function prevCal() {
   var txt = document.getElementById('trCal').textContent.trim();
   var mf  = document.getElementById('mfCal').classList.contains('sh');
-  if (!txt && !mf) { toast('i', 'Empty', 'Speak or type meeting details first.'); return; }
+  if (!txt && !mf) { toast('i','Empty','Speak or type meeting details first.'); return; }
 
-  var html = '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+  var ep = document.getElementById('epCal');
+  var body = document.getElementById('epCalBody');
+  var html = '';
+
   if (txt) {
     var tl = txt.toLowerCase();
     var title = txt.split(/\s+(?:on|at|from|tomorrow|today)/i)[0]
-      .replace(/^(?:schedule|create|add|book|plan)\s+(?:a\s+)?(?:meeting\s+)?(?:about|for|regarding)?\s*/i, '').trim();
-    var dateM  = tl.match(/(today|tomorrow|day after tomorrow|\d{1,2}(?:st|nd|rd|th)?\s*(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*)/i);
-    var times  = tl.match(/\d{1,2}(?::\d{2})?\s*(?:am|pm)/gi);
-    var emails = txt.match(/[\w.+-]+@[\w-]+\.[\w.]+/g);
-    html += row('Title', title || '(not detected)');
-    html += row('Date',  dateM ? dateM[0] : 'Not detected');
-    html += row('Time',  times ? times.join(' → ') : 'Not detected');
-    html += row('Guests', emails ? emails.join(', ') : 'None');
+      .replace(/^(?:schedule|create|add|book|plan)\s+(?:a\s+)?(?:meeting\s+)?(?:about|for|regarding)?\s*/i,'').trim();
+    var dateM = tl.match(/(today|tomorrow|day after tomorrow|\d{1,2}(?:st|nd|rd|th)?\s*(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*)/i);
+    var times = tl.match(/\d{1,2}(?::\d{2})?\s*(?:am|pm)/gi);
+    var emails= txt.match(/[\w.+-]+@[\w-]+\.[\w.]+/g);
+    html += '<div style="margin-bottom:6px"><strong>Title:</strong> <span contenteditable="true" id="epCalTitle" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc(title||'(not detected)')+'</span></div>';
+    html += '<div style="margin-bottom:6px"><strong>Date:</strong> <span contenteditable="true" id="epCalDate" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc(dateM?dateM[0]:'Not detected')+'</span></div>';
+    html += '<div style="margin-bottom:6px"><strong>Time:</strong> <span contenteditable="true" id="epCalTime" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc(times?times.join(' to '):'Not detected')+'</span></div>';
+    html += '<div style="margin-bottom:6px"><strong>Guests:</strong> <span contenteditable="true" id="epCalGuests" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc(emails?emails.join(', '):'None')+'</span></div>';
     if (selectedContacts.length) {
-      html += row('Saved Contacts', selectedContacts.join(', '));
+      html += '<div><strong>Saved Contacts:</strong> '+esc(selectedContacts.join(', '))+'</div>';
     }
   } else {
-    html += row('Title', v('cTt'));
-    html += row('Date',  v('cDt'));
-    html += row('Time',  v('cSt') + ' → ' + v('cEt'));
-    html += row('Guests', v('cGs') || 'None');
-    if (selectedContacts.length) {
-      html += row('Saved Contacts', selectedContacts.join(', '));
-    }
+    html += '<div style="margin-bottom:6px"><strong>Title:</strong> '+esc(v('cTt'))+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Date:</strong> '+esc(v('cDt'))+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Time:</strong> '+esc(v('cSt'))+' to '+esc(v('cEt'))+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Guests:</strong> '+esc(v('cGs')||'None')+'</div>';
+    if (selectedContacts.length) html += '<div><strong>Saved Contacts:</strong> '+esc(selectedContacts.join(', '))+'</div>';
   }
-  html += '</table>';
-  document.getElementById('pvCalC').innerHTML = html;
-  document.getElementById('pvCal').classList.add('sh');
-  setStep('cal', 2);
+  html += '<div style="font-size:10px;color:#999;margin-top:6px">Click on any value above to edit it.</div>';
+  body.innerHTML = html;
+  ep.classList.add('sh');
 }
 
-
-// ================================================
-// TRACKER PREVIEW
-// ================================================
+// TRACKER PREVIEW — EDITABLE
 function prevTrk() {
   var txt = document.getElementById('trTrk').textContent.trim();
   var mf  = document.getElementById('mfTrk').classList.contains('sh');
-  if (!txt && !mf) { toast('i', 'Empty', 'Speak or type task details first.'); return; }
+  if (!txt && !mf) { toast('i','Empty','Speak or type task details.'); return; }
 
-  var html = '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+  var ep = document.getElementById('epTrk');
+  var body = document.getElementById('epTrkBody');
+  var html = '';
+
   if (txt) {
     var tkM = txt.match(/(?:task|worked on|completed)\s*[:\-]?\s*(.+?)(?:\s*(?:,|with|stakeholder|remark|$))/i);
     var shM = txt.match(/(?:with|stakeholder)\s*[:\-]?\s*(.+?)(?:\s*(?:,|remark|$))/i);
     var rmM = txt.match(/(?:remark|note|status)\s*[:\-]?\s*(.+?)$/i);
-    html += row('Task',        (tkM ? tkM[1] : txt.split(/[,]/)[0]).trim());
-    html += row('Date',        'Today — ' + new Date().toLocaleDateString('en-IN'));
-    html += row('Stakeholder', shM ? shM[1] : '(not detected)');
-    html += row('Remark',      rmM ? rmM[1] : '(not detected)');
+    html += '<div style="margin-bottom:6px"><strong>Task:</strong> <span contenteditable="true" id="epTrkTask" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc((tkM?tkM[1]:txt.split(',')[0]).trim())+'</span></div>';
+    html += '<div style="margin-bottom:6px"><strong>Date:</strong> '+new Date().toLocaleDateString('en-IN')+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Stakeholder:</strong> <span contenteditable="true" id="epTrkSH" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc(shM?shM[1]:'(not detected)')+'</span></div>';
+    html += '<div style="margin-bottom:6px"><strong>Remark:</strong> <span contenteditable="true" id="epTrkRm" style="border-bottom:1px dashed #999;padding:1px 4px">'+esc(rmM?rmM[1]:'(not detected)')+'</span></div>';
   } else {
-    html += row('Task',        v('tTk'));
-    html += row('Date',        v('tDt'));
-    html += row('Stakeholder', v('tSh') || 'None');
-    html += row('Remark',      v('tRm') || 'None');
+    html += '<div style="margin-bottom:6px"><strong>Task:</strong> '+esc(v('tTk'))+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Date:</strong> '+esc(v('tDt'))+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Stakeholder:</strong> '+esc(v('tSh')||'None')+'</div>';
+    html += '<div style="margin-bottom:6px"><strong>Remark:</strong> '+esc(v('tRm')||'None')+'</div>';
   }
-  html += '</table>';
-  document.getElementById('pvTrkC').innerHTML = html;
-  document.getElementById('pvTrk').classList.add('sh');
-  setStep('trk', 2);
+  html += '<div style="font-size:10px;color:#999;margin-top:6px">Click on any value above to edit it.</div>';
+  body.innerHTML = html;
+  ep.classList.add('sh');
 }
 
-function row(label, value) {
-  return '<tr><td style="padding:5px 6px;font-weight:700;color:#555;width:100px;vertical-align:top">' +
-         escHtml(label) + ':</td><td style="padding:5px 6px;color:#222">' + escHtml(value) + '</td></tr>';
-}
-function v(id) { return document.getElementById(id).value || '—'; }
+function v(id) { return document.getElementById(id).value || ''; }
 
 
 // ================================================
@@ -1369,84 +1063,80 @@ function submitCal() {
   var btn = document.getElementById('sbCal');
   var txt = document.getElementById('trCal').textContent.trim();
   var mf  = document.getElementById('mfCal').classList.contains('sh');
+  var ep  = document.getElementById('epCal').classList.contains('sh');
   var d   = {};
 
-  if (txt) d.rawText = txt;
+  if (ep) {
+    // Use edited preview values if available
+    var epTitle = document.getElementById('epCalTitle');
+    var epGuests = document.getElementById('epCalGuests');
+    if (epTitle) d.rawText = (epTitle.textContent||'') + ' ' + txt;
+    else d.rawText = txt;
+    if (epGuests && epGuests.textContent.trim() !== 'None') {
+      d.guests = (d.guests||'') + ',' + epGuests.textContent.trim();
+    }
+  } else if (txt) {
+    d.rawText = txt;
+  }
   if (mf) {
-    d.title       = v('cTt');
-    d.date        = v('cDt');
-    d.startTime   = v('cSt');
-    d.endTime     = v('cEt');
-    d.guests      = v('cGs');
-    d.description = v('cDs');
+    d.title = v('cTt'); d.date = v('cDt'); d.startTime = v('cSt');
+    d.endTime = v('cEt'); d.guests = v('cGs'); d.description = v('cDs');
   }
-  // Add selected saved contacts
-  if (selectedContacts.length) {
-    d.savedContacts = selectedContacts;
-  }
+  if (selectedContacts.length) d.savedContacts = selectedContacts;
+  if (!txt && !d.title) { toast('e','Empty','Provide input first.'); return; }
 
-  if (!txt && !d.title) { toast('e', 'Empty', 'Provide voice input or fill the form.'); return; }
-
-  ld(btn, true); setStep('cal', 3);
+  ld(btn,true);
   call('calendar', d,
     function(r) {
-      ld(btn, false);
+      ld(btn,false);
       if (r.success) {
-        toast('s', 'Calendar Updated! ✅',
-          r.details ? r.details.title + ' — ' + r.details.start : r.message);
+        toast('s','Calendar Updated', r.details ? r.details.title+' — '+r.details.start : r.message);
         document.getElementById('trCal').textContent = '';
-        document.getElementById('pvCal').classList.remove('sh');
+        document.getElementById('epCal').classList.remove('sh');
         selectedContacts = [];
-        document.querySelectorAll('.ct-chip.sel').forEach(function(c) { c.classList.remove('sel'); });
-        setStep('cal', 1); ldCal();
-      } else {
-        toast('e', 'Failed', r.message); setStep('cal', 2);
-      }
+        document.querySelectorAll('.ct-chip.sel').forEach(function(c){c.classList.remove('sel');});
+        ldCal();
+      } else { toast('e','Failed',r.message); }
     },
-    function(err) { ld(btn, false); toast('e', 'Error', err); setStep('cal', 2); }
+    function(err) { ld(btn,false); toast('e','Error',err); }
   );
 }
 
 
 // ================================================
-// SUBMIT: DOCUMENTATION (with format & highlights)
+// SUBMIT: DOCUMENTATION — grammar NOT mandatory
 // ================================================
 function submitDoc() {
-  var btn  = document.getElementById('sbDoc');
-  var raw  = document.getElementById('trDoc').textContent.trim();
-  var gp   = document.getElementById('gprev');
-  var gpE  = document.getElementById('gprevE');
+  var btn = document.getElementById('sbDoc');
+  var raw = document.getElementById('trDoc').textContent.trim();
+  if (!raw) { toast('e','Empty','Speak or type your work first.'); return; }
 
-  if (!raw) { toast('e', 'Empty', 'Speak or type your work first.'); return; }
+  var gp  = document.getElementById('gprev');
+  var gpE = document.getElementById('gprevE');
 
-  if (!gp.classList.contains('sh')) {
-    toast('i', 'Check Grammar First', 'Tap ✨ Check Grammar to review before saving.');
-    return;
+  // If grammar was checked, use corrected text. Otherwise use raw text directly.
+  var corrected = '';
+  if (gp.classList.contains('sh') && gpE.textContent.trim()) {
+    corrected = gpE.textContent.trim();
   }
 
-  var corrected = gpE.textContent.trim();
-  if (!corrected) { toast('e', 'Empty', 'Grammar box is empty.'); return; }
-
-  ld(btn, true); setStep('doc', 3);
+  ld(btn,true);
   call('documentation', {
       rawText: raw,
-      correctedText: corrected,
+      correctedText: corrected,  // empty string = server will use raw or polish itself
       format: selectedFormat,
       highlights: highlightWords
     },
     function(r) {
-      ld(btn, false);
+      ld(btn,false);
       if (r.success) {
-        toast('s', 'Saved to Google Doc! ✅',
-          'Format: ' + selectedFormat + ' | Week: ' + (r.details ? r.details.week : ''));
+        toast('s','Saved to Doc', 'Format: '+selectedFormat);
         document.getElementById('trDoc').textContent = '';
         gp.classList.remove('sh'); gpE.textContent = '';
-        setStep('doc', 1); ldDoc();
-      } else {
-        toast('e', 'Failed', r.message); setStep('doc', 2);
-      }
+        ldDoc();
+      } else { toast('e','Failed',r.message); }
     },
-    function(err) { ld(btn, false); toast('e', 'Error', err); setStep('doc', 2); }
+    function(err) { ld(btn,false); toast('e','Error',err); }
   );
 }
 
@@ -1458,58 +1148,60 @@ function submitTrk() {
   var btn = document.getElementById('sbTrk');
   var txt = document.getElementById('trTrk').textContent.trim();
   var mf  = document.getElementById('mfTrk').classList.contains('sh');
+  var ep  = document.getElementById('epTrk').classList.contains('sh');
   var d   = {};
 
-  if (txt) d.rawText = txt;
-  if (mf) {
-    d.taskName    = v('tTk');
-    d.date        = v('tDt');
-    d.stakeholder = v('tSh');
-    d.remark      = v('tRm');
+  if (ep) {
+    // Use edited preview
+    var epTask = document.getElementById('epTrkTask');
+    var epSH = document.getElementById('epTrkSH');
+    var epRm = document.getElementById('epTrkRm');
+    if (epTask) d.taskName = epTask.textContent.trim();
+    if (epSH) d.stakeholder = epSH.textContent.trim().replace(/^\(not detected\)$/,'');
+    if (epRm) d.remark = epRm.textContent.trim().replace(/^\(not detected\)$/,'');
+  } else if (txt) {
+    d.rawText = txt;
   }
-  if (!txt && !d.taskName) { toast('e', 'Empty', 'Provide voice input or fill the form.'); return; }
+  if (mf) {
+    d.taskName = v('tTk'); d.date = v('tDt');
+    d.stakeholder = v('tSh'); d.remark = v('tRm');
+  }
+  if (!txt && !d.taskName) { toast('e','Empty','Provide input first.'); return; }
 
-  ld(btn, true); setStep('trk', 3);
+  ld(btn,true);
   call('tracker', d,
     function(r) {
-      ld(btn, false);
+      ld(btn,false);
       if (r.success) {
-        toast('s', 'Tracker Updated! ✅',
-          '#' + r.details.serialNumber + ': ' + r.details.taskName);
+        toast('s','Tracker Updated', '#'+r.details.serialNumber+': '+r.details.taskName);
         document.getElementById('trTrk').textContent = '';
-        document.getElementById('pvTrk').classList.remove('sh');
-        setStep('trk', 1); ldTrk();
-      } else {
-        toast('e', 'Failed', r.message); setStep('trk', 2);
-      }
+        document.getElementById('epTrk').classList.remove('sh');
+        ldTrk();
+      } else { toast('e','Failed',r.message); }
     },
-    function(err) { ld(btn, false); toast('e', 'Error', err); setStep('trk', 2); }
+    function(err) { ld(btn,false); toast('e','Error',err); }
   );
 }
 
 
 // ================================================
-// SUBMIT: FIELD NOTE
+// SUBMIT: FIELD NOTE — grammar NOT mandatory
 // ================================================
 function submitFld() {
   var btn = document.getElementById('sbFld');
   var raw = document.getElementById('trFld').textContent.trim();
+  if (!raw) { toast('e','Empty','Speak or type your note first.'); return; }
+
   var gp  = document.getElementById('gprevFld');
   var gpE = document.getElementById('gprevFldE');
-
-  if (!raw) { toast('e', 'Empty', 'Speak or type your note first.'); return; }
-
-  if (!gp.classList.contains('sh')) {
-    toast('i', 'Check Grammar First', 'Tap ✨ Check Grammar to review before saving.');
-    return;
+  var corrected = '';
+  if (gp.classList.contains('sh') && gpE.textContent.trim()) {
+    corrected = gpE.textContent.trim();
   }
-
-  var corrected = gpE.textContent.trim();
-  if (!corrected) { toast('e', 'Empty', 'Grammar box is empty.'); return; }
 
   var location = document.getElementById('fldLoc').value.trim();
 
-  ld(btn, true); setStep('fld', 3);
+  ld(btn,true);
   call('fieldNote', {
       rawText: raw,
       correctedText: corrected,
@@ -1517,24 +1209,22 @@ function submitFld() {
       location: location
     },
     function(r) {
-      ld(btn, false);
+      ld(btn,false);
       if (r.success) {
-        toast('s', 'Field Note Saved! ✅', r.message);
+        toast('s','Field Note Saved', r.message);
         document.getElementById('trFld').textContent = '';
         gp.classList.remove('sh'); gpE.textContent = '';
         document.getElementById('fldLoc').value = '';
-        setStep('fld', 1); ldFld();
-      } else {
-        toast('e', 'Failed', r.message); setStep('fld', 2);
-      }
+        ldFld();
+      } else { toast('e','Failed',r.message); }
     },
-    function(err) { ld(btn, false); toast('e', 'Error', err); setStep('fld', 2); }
+    function(err) { ld(btn,false); toast('e','Error',err); }
   );
 }
 
 
 // ================================================
-// LOAD DATA FROM BACKEND
+// LOAD DATA
 // ================================================
 function ldCal() {
   call('getCalendarEvents', {},
@@ -1542,23 +1232,15 @@ function ldCal() {
       var c = document.getElementById('calEvs');
       if (r.success && r.events && r.events.length) {
         c.innerHTML = r.events.map(function(e) {
-          return '<div class="ev-i">' +
-            '<div class="ev-tm">' + escHtml(e.start) + '<br>' + escHtml(e.end) + '</div>' +
-            '<div class="ev-info">' +
-              '<div class="ev-tt">' + escHtml(e.title) + '</div>' +
-              (e.location ? '<div class="ev-gs">📍 ' + escHtml(e.location) + '</div>' : '') +
-              (e.guests && e.guests.length ?
-                '<div class="ev-gs">👥 ' + e.guests.map(escHtml).join(', ') + '</div>' : '') +
+          return '<div class="ev-i"><div class="ev-tm">'+esc(e.start)+'<br>'+esc(e.end)+'</div>' +
+            '<div><div class="ev-tt">'+esc(e.title)+'</div>' +
+            (e.location?'<div class="ev-gs">Location: '+esc(e.location)+'</div>':'') +
+            (e.guests&&e.guests.length?'<div class="ev-gs">Guests: '+e.guests.map(esc).join(', ')+'</div>':'') +
             '</div></div>';
         }).join('');
-      } else {
-        c.innerHTML = '<div class="emp"><div class="emp-ic">📅</div><div class="emp-tx">No events today</div></div>';
-      }
+      } else { c.innerHTML = '<div class="emp"><div class="emp-ic">📅</div><div class="emp-tx">No events today</div></div>'; }
     },
-    function() {
-      document.getElementById('calEvs').innerHTML =
-        '<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load events</div></div>';
-    }
+    function(){document.getElementById('calEvs').innerHTML='<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load</div></div>';}
   );
 }
 
@@ -1567,22 +1249,12 @@ function ldDoc() {
     function(r) {
       var c = document.getElementById('rcDoc');
       if (r.success && r.preview) {
-        c.innerHTML =
-          '<div style="font-size:12px;line-height:1.7;color:#555;max-height:200px;overflow-y:auto;' +
-          'padding:10px;background:#fafafa;border-radius:8px;border:1px solid #eee">' +
-          escHtml(r.preview).replace(/\n/g, '<br>') + '</div>' +
-          (r.docUrl ?
-            '<a href="' + r.docUrl + '" target="_blank" ' +
-            'style="font-size:12px;color:var(--pri);display:block;margin-top:8px">' +
-            '📄 Open Full Document →</a>' : '');
-      } else {
-        c.innerHTML = '<div class="emp"><div class="emp-ic">📝</div><div class="emp-tx">No entries yet</div></div>';
-      }
+        c.innerHTML = '<div style="font-size:12px;line-height:1.6;color:#555;max-height:180px;overflow-y:auto;padding:8px;background:#fafafa;border-radius:6px;border:1px solid #eee;font-family:Times New Roman,serif">' +
+          esc(r.preview).replace(/\n/g,'<br>') + '</div>' +
+          (r.docUrl?'<a href="'+r.docUrl+'" target="_blank" style="font-size:11px;color:var(--pri);display:block;margin-top:6px">Open Full Document</a>':'');
+      } else { c.innerHTML = '<div class="emp"><div class="emp-tx">No entries yet</div></div>'; }
     },
-    function() {
-      document.getElementById('rcDoc').innerHTML =
-        '<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load document</div></div>';
-    }
+    function(){document.getElementById('rcDoc').innerHTML='<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load</div></div>';}
   );
 }
 
@@ -1591,28 +1263,17 @@ function ldTrk() {
     function(r) {
       var c = document.getElementById('trkRows');
       if (r.success && r.data && r.data.length) {
-        var h = '<div style="font-size:11px;color:#888;margin-bottom:8px">Total tasks logged: <strong>' + r.totalTasks + '</strong></div>';
-        h += '<table class="dtb"><thead><tr>' +
-          '<th>S.No</th><th>Task</th><th>Date</th><th>Stakeholder</th><th>Remark</th>' +
-          '</tr></thead><tbody>';
+        var h = '<div style="font-size:11px;color:#888;margin-bottom:6px">Total tasks: <strong>'+r.totalTasks+'</strong></div>';
+        h += '<table class="dtb"><thead><tr><th>S.No</th><th>Task</th><th>Date</th><th>Stakeholder</th><th>Remark</th></tr></thead><tbody>';
         r.data.forEach(function(row) {
-          h += '<tr><td>' + escHtml(String(row.serialNumber)) + '</td><td>' + escHtml(row.taskName) +
-               '</td><td>' + escHtml(String(row.date)) + '</td><td>' + escHtml(row.stakeholder) +
-               '</td><td>' + escHtml(row.remark) + '</td></tr>';
+          h += '<tr><td>'+esc(String(row.serialNumber))+'</td><td>'+esc(row.taskName)+'</td><td>'+esc(String(row.date))+'</td><td>'+esc(row.stakeholder)+'</td><td>'+esc(row.remark)+'</td></tr>';
         });
         h += '</tbody></table>';
-        if (r.sheetUrl) h += '<a href="' + r.sheetUrl + '" target="_blank" ' +
-          'style="font-size:12px;color:var(--pri);display:block;margin-top:8px">' +
-          '📊 Open Full Sheet →</a>';
+        if (r.sheetUrl) h += '<a href="'+r.sheetUrl+'" target="_blank" style="font-size:11px;color:var(--pri);display:block;margin-top:6px">Open Full Sheet</a>';
         c.innerHTML = h;
-      } else {
-        c.innerHTML = '<div class="emp"><div class="emp-ic">📊</div><div class="emp-tx">No entries yet</div></div>';
-      }
+      } else { c.innerHTML = '<div class="emp"><div class="emp-tx">No entries yet</div></div>'; }
     },
-    function() {
-      document.getElementById('trkRows').innerHTML =
-        '<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load tracker</div></div>';
-    }
+    function(){document.getElementById('trkRows').innerHTML='<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load</div></div>';}
   );
 }
 
@@ -1621,161 +1282,86 @@ function ldFld() {
     function(r) {
       var c = document.getElementById('fldNotes');
       if (r.success && r.preview) {
-        c.innerHTML =
-          '<div style="font-size:12px;line-height:1.7;color:#555;max-height:200px;overflow-y:auto;' +
-          'padding:10px;background:#fafafa;border-radius:8px;border:1px solid #eee">' +
-          escHtml(r.preview).replace(/\n/g, '<br>') + '</div>' +
-          (r.docUrl ?
-            '<a href="' + r.docUrl + '" target="_blank" ' +
-            'style="font-size:12px;color:#bf360c;display:block;margin-top:8px">' +
-            '🏗️ Open Full Field Notes Doc →</a>' : '');
-      } else {
-        c.innerHTML = '<div class="emp"><div class="emp-ic">🏗️</div><div class="emp-tx">No field notes yet</div></div>';
-      }
+        c.innerHTML = '<div style="font-size:12px;line-height:1.6;color:#555;max-height:180px;overflow-y:auto;padding:8px;background:#fafafa;border-radius:6px;border:1px solid #eee;font-family:Times New Roman,serif">' +
+          esc(r.preview).replace(/\n/g,'<br>') + '</div>' +
+          (r.docUrl?'<a href="'+r.docUrl+'" target="_blank" style="font-size:11px;color:#bf360c;display:block;margin-top:6px">Open Field Notes Doc</a>':'');
+      } else { c.innerHTML = '<div class="emp"><div class="emp-tx">No field notes yet</div></div>'; }
     },
-    function() {
-      document.getElementById('fldNotes').innerHTML =
-        '<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load field notes</div></div>';
-    }
+    function(){document.getElementById('fldNotes').innerHTML='<div class="emp"><div class="emp-tx" style="color:var(--err)">Could not load</div></div>';}
   );
 }
 
 function chkStatus() {
   call('getStatus', {},
     function(s) {
-      document.getElementById('dCal').className = 'dot ' + (s.calendar      ? 'on' : 'off');
-      document.getElementById('dDoc').className = 'dot ' + (s.documentation ? 'on' : 'off');
-      document.getElementById('dTrk').className = 'dot ' + (s.tracker       ? 'on' : 'off');
-      document.getElementById('dFld').className = 'dot ' + (s.fieldNotes    ? 'on' : 'off');
+      document.getElementById('dCal').className = 'dot '+(s.calendar?'on':'off');
+      document.getElementById('dDoc').className = 'dot '+(s.documentation?'on':'off');
+      document.getElementById('dTrk').className = 'dot '+(s.tracker?'on':'off');
+      document.getElementById('dFld').className = 'dot '+(s.fieldNotes?'on':'off');
       if (s.calendar && s.documentation && s.tracker && s.fieldNotes) {
-        toast('s', 'All Systems Connected',
-          '📅 ' + (s.calendarName||'') + '  |  📝 ' + (s.docName||'') +
-          '  |  📊 ' + (s.sheetName||'') + '  |  🏗️ ' + (s.fieldDocName||''));
+        toast('s','All Connected', (s.calendarName||'')+' | '+(s.docName||'')+' | '+(s.sheetName||'')+' | '+(s.fieldDocName||''));
       } else {
-        var missing = [];
-        if (!s.calendar) missing.push('Calendar');
-        if (!s.documentation) missing.push('Daily Doc');
-        if (!s.tracker) missing.push('Tracker');
-        if (!s.fieldNotes) missing.push('Field Notes');
-        toast('e', 'Connection Issue',
-          'Check IDs in Code.gs CONFIG for: ' + missing.join(', '));
+        var m = [];
+        if(!s.calendar)m.push('Calendar');if(!s.documentation)m.push('Doc');if(!s.tracker)m.push('Tracker');if(!s.fieldNotes)m.push('Field');
+        toast('e','Connection Issue','Check IDs for: '+m.join(', '));
       }
     },
     function() {
-      ['dCal','dDoc','dTrk','dFld'].forEach(function(id) {
-        document.getElementById(id).className = 'dot off';
-      });
-      toast('e', 'Cannot Reach Backend',
-        'Check your Apps Script URL in Settings. Redeploy after code changes.');
+      ['dCal','dDoc','dTrk','dFld'].forEach(function(id){document.getElementById(id).className='dot off';});
+      toast('e','Cannot Reach Backend','Check URL in Settings and redeploy.');
     }
   );
 }
 
 
 // ================================================
-// FETCH BACKEND (GitHub Pages → Apps Script)
+// FETCH
 // ================================================
 function call(action, data, onOk, onErr) {
-  if (!GAS) {
-    toast('e', 'Not Configured', 'Open Settings and paste your Apps Script URL.');
-    if (onErr) onErr('No URL');
-    return;
-  }
-
-  var url = GAS +
-    '?action=' + encodeURIComponent(action) +
-    '&data='   + encodeURIComponent(JSON.stringify(data || {}));
-
+  if (!GAS) { toast('e','Not Configured','Open Settings and paste URL.'); if(onErr)onErr('No URL'); return; }
+  var url = GAS + '?action='+encodeURIComponent(action)+'&data='+encodeURIComponent(JSON.stringify(data||{}));
   fetch(url)
-    .then(function(res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return res.json();
-    })
-    .then(function(result) { if (onOk) onOk(result); })
-    .catch(function(err) {
-      console.error('Backend error:', err);
-      if (onErr) onErr(err.message || 'Connection failed');
-    });
+    .then(function(res){if(!res.ok)throw new Error('HTTP '+res.status);return res.json();})
+    .then(function(result){if(onOk)onOk(result);})
+    .catch(function(err){console.error('Backend:',err);if(onErr)onErr(err.message||'Failed');});
 }
 
 
 // ================================================
-// TAB SWITCHING
+// TABS
 // ================================================
 function swTab(tab, el) {
-  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('act'); });
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('act');});
   el.classList.add('act');
-  document.querySelectorAll('.pnl').forEach(function(p) { p.classList.remove('act'); });
-  document.getElementById({ cal:'pCal', doc:'pDoc', trk:'pTrk', fld:'pFld' }[tab]).classList.add('act');
+  document.querySelectorAll('.pnl').forEach(function(p){p.classList.remove('act');});
+  document.getElementById({cal:'pCal',doc:'pDoc',trk:'pTrk',fld:'pFld'}[tab]).classList.add('act');
 }
-
 
 // ================================================
 // TOAST
 // ================================================
 function toast(type, title, msg) {
-  var c    = document.getElementById('tstC');
-  var icon = { s:'✅', e:'❌', i:'ℹ️', w:'⚠️' }[type] || 'ℹ️';
-  var cls  = { s:'ok', e:'er', i:'in', w:'in' }[type]  || 'in';
-  var el   = document.createElement('div');
-  el.className = 'tst ' + cls;
-  el.innerHTML =
-    '<div class="tst-ic">' + icon + '</div>' +
-    '<div><div class="tst-tt">' + escHtml(title) + '</div>' +
-    '<div class="tst-mg">' + escHtml(msg) + '</div></div>';
+  var c = document.getElementById('tstC');
+  var icon = {s:'✓',e:'✗',i:'i',w:'!'}[type]||'i';
+  var cls  = {s:'ok',e:'er',i:'in',w:'in'}[type]||'in';
+  var el = document.createElement('div');
+  el.className = 'tst '+cls;
+  el.innerHTML = '<div class="tst-ic">'+icon+'</div><div><div class="tst-tt">'+esc(title)+'</div><div class="tst-mg">'+esc(msg)+'</div></div>';
   c.appendChild(el);
-  setTimeout(function() {
-    el.style.transition = 'opacity .3s, transform .3s';
-    el.style.opacity = '0'; el.style.transform = 'translateY(-12px)';
-    setTimeout(function() { el.remove(); }, 320);
-  }, 5000);
+  setTimeout(function(){el.style.transition='opacity .3s';el.style.opacity='0';setTimeout(function(){el.remove();},300);},4000);
 }
 
-
-// ================================================
-// LOADING STATE
-// ================================================
 function ld(btn, loading) {
-  if (loading) {
-    btn.disabled = true;
-    btn.setAttribute('data-orig', btn.innerHTML);
-    btn.innerHTML = '<span class="spn"></span> Saving...';
-  } else {
-    btn.disabled = false;
-    btn.innerHTML = btn.getAttribute('data-orig') || btn.innerHTML;
-  }
+  if (loading) { btn.disabled=true; btn.setAttribute('data-orig',btn.innerHTML); btn.innerHTML='<span class="spn"></span> Saving...'; }
+  else { btn.disabled=false; btn.innerHTML=btn.getAttribute('data-orig')||btn.innerHTML; }
 }
 
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function escA(s){return esc(s).replace(/'/g,'&#39;');}
 
-// ================================================
-// HTML ESCAPING
-// ================================================
-function escHtml(str) {
-  if (!str) return '';
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function escAttr(str) {
-  return escHtml(str).replace(/'/g,'&#39;');
-}
+function loadAll(){chkStatus();ldCal();ldDoc();ldTrk();ldFld();loadContacts();}
 
-
-// ================================================
-// LOAD ALL DATA
-// ================================================
-function loadAll() {
-  chkStatus();
-  ldCal();
-  ldDoc();
-  ldTrk();
-  ldFld();
-  loadContacts();
-}
-
-
-// ================================================
-// START
-// ================================================
 init();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fb48c7d98403c33',t:'MTc3ODcwNTU2Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fb4c92e584051de',t:'MTc3ODcwODA1Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
